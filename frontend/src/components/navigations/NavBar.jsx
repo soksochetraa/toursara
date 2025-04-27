@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
-import logo from "../assets/images/toursara_logo.svg";
-import Button from "./buttons/ButtonGetStart";
+import logo from "../../assets/images/toursara_logo.svg";
+import Button from "../buttons/ButtonGetStart";
 
 const links = [
   { label: "HOME", path: "/" },
