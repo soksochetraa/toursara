@@ -6,6 +6,7 @@ import Cambodia from "./pages/AboutCambodia";
 import Hotel from "./pages/Hotel";
 import Travel from "./pages/Travel";
 import Contact from "./pages/Contact";
+import Explore from "./pages/Explore";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "explore",
+        element: <Explore />,
       },
     ],
   },

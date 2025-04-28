@@ -1,8 +1,19 @@
 import Button from "../components/buttons/ButtonGetStart";
 import YouTubePlayer from "../components/media/YoutubePlayer";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../Auth";
+import { useEffect } from "react";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 
 function Home() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (auth.isLoggedIn) {
+      navigate("/explore");
+    }
+  }, []);
+
   return (
     <>
       <section className="flex flex-col items-center gap-2.5 self-stretch pt-5 pb-[100px]">
@@ -19,7 +30,11 @@ function Home() {
               Time tracking software used by millions. A simple time tracker and
               timesheet app that lets you track work hours across projects......
             </p>
-            <Button text="Explore" ariaLabel="Explore Button" />
+            <Button
+              text="Explore"
+              ariaLabel="Explore Button"
+              onClick={() => navigate("/explore")}
+            />
           </div>
         </div>
         <div className="w-[1420px] flex flex-col justify-center items-center gap-2.5 px-[30px] relative">

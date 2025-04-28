@@ -14,8 +14,20 @@ const links = [
 const NavBar = () => {
   const location = useLocation();
 
+  const getActivePath = (path) => {
+    if (location.pathname === "/explore") {
+      return path === "/";
+    }
+    return location.pathname === path;
+  };
+
+  const navClassName =
+    location.pathname === "/explore"
+      ? "relative navbar w-full flex justify-between px-[50px] py-[30px] z-50"
+      : "navbar w-full flex justify-between px-[50px] py-[30px] z-10";
+
   return (
-    <nav className="navbar w-full flex justify-between px-[50px] py-[30px]">
+    <nav className={navClassName}>
       <img src={logo} alt="Logo" className="w-[111px] h-[125px]" />
       <ul className="nav-links flex justify-around items-center w-[800px] h-[75px]">
         {links.map((link) => (
@@ -30,7 +42,7 @@ const NavBar = () => {
               {link.label}
               <span
                 className={`block h-[2px] bg-[#ef3a45] mt-[1px] rounded-full transition-all duration-300 ${
-                  location.pathname === link.path
+                  getActivePath(link.path)
                     ? "w-6 h-0.5 opacity-100"
                     : "w-0 h-0.5 opacity-0"
                 } group-hover:w-full group-hover:opacity-100`}

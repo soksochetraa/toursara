@@ -1,9 +1,10 @@
 import React from "react";
 
-const Button = ({ text, ariaLabel, className }) => {
+const Button = ({ text, ariaLabel, className, onClick = () => {} }) => {
   return (
     <div className="flex flex-col justify-center items-center w-[225px] h-[75px] gap-2.5">
       <button
+        onClick={onClick}
         className={`relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] 
         bg-red-500 text-white border-[1.5px] border-red-500 rounded-lg font-medium text-base mt-5 
         overflow-hidden z-10 group cursor-pointer transition-all duration-300 
