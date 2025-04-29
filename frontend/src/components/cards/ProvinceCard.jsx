@@ -8,10 +8,10 @@ function ProvinceCard({ province, image, width, height }) {
         height: height,
       }}
     >
-      <p className="z-1 w-full h-[70px] text-white font-lato text-[32px] font-[700] absolute top-[80%] left-[10px] group-hover:top-[70%] transition-all duration-300 ">
+      <p className="z-1 w-full h-[70px] text-white font-lato text-[26px] font-[700] absolute top-[80%] left-[10px] group-hover:top-[70%] transition-all duration-300 ">
         {province.name}
       </p>
-      <p className="z-1 w-full h-[32px] text-white font-lato  pt-[12px] text-[12px] font-[500] absolute bottom-0 left-[10px] opacity-0 group-hover:opacity-100 group-hover:bottom-[18%] transition-all duration-300">
+      <p className="z-1 w-full h-[32px] text-white font-lato  pt-[12px] text-[12px] font-[500] absolute bottom-0 left-[10px] opacity-0 group-hover:opacity-100 group-hover:bottom-[14%] transition-all duration-300">
         {province.resources}
       </p>
 

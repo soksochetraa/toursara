@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import HeroBg from "../assets/images/bg_hero_section_explore.jpg";
 import ProvinceContainer from "../components/container/ProvincesContainer";
 import provinces from "../data/provinces";
+import DestinationsContainer from "../components/container/DestinationsContainer";
+import GoogleMapComponent from "../components/cards/GoogleMapComponent";
 
 function Explore() {
+  const [activeDestination, setActiveDestination] = useState(null);
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedAmenity, setSelectedAmenity] = useState("");
+
+  const handleSearchClick = () => {
+    setSearchQuery(searchQuery);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearchClick();
+    }
+  };
+
   return (
     <>
       <section
-        className="absolute top-0 h-[672px] w-full flex flex-col justify-center items-center gap-[50px] px-[50px] py-2.5 bg-cover bg-no-repeat bg-center"
+        className="absolute top-0 h-[590px] w-full flex flex-col justify-center items-center gap-[50px] px-[50px] py-2.5 bg-cover bg-no-repeat bg-center"
         style={{
           backgroundImage: `url(${HeroBg})`,
         }}
@@ -24,11 +41,59 @@ function Explore() {
         </div>
       </section>
 
-      <section className="mt-[470px] flex flex-col items-start gap-[18px] p-[30px]">
-        <h1 className="font-bold text-[32px] text-[#222222]">
+      <section className="w-full mt-[470px] flex flex-col justify-center items-center gap-[18px] p-[30px]">
+        <h1 className="w-[1440px] text-start font-bold text-[32px] text-[#222222]">
           Explore Cambodia's Province
         </h1>
-        <ProvinceContainer provinces={provinces} />
+        <div className="w-[1440px] overflow-x-auto">
+          <div className="flex flex-nowrap gap-4">
+            <ProvinceContainer
+              provinces={provinces}
+              onProvinceClick={(name) => {
+                setSearchQuery(name);
+                document
+                  .getElementById("search-section")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="">
+        <div className="flex items-center justify-center gap-2.5 self-stretch p-[30px]">
+          <h1 className="w-[1440px] text-start font-bold text-[32px] text-[#222222]">
+            Search to Explore.
+          </h1>
+        </div>
+
+        <div
+          id="search-section"
+          className="w-full flex justify-center items-start gap-[18px] p-[30px]"
+        >
+          <div className="w-[840px] flex flex-col gap-4 px-10 pb-10">
+            <div className="w-[760px] h-[48px] flex items-center gap-4 self-stretch bg-white pl-6 pr-1 py-1 rounded-full border border-solid border-gray-200">
+              <input
+                className="w-full outline-none text-base text-[14px]"
+                type="text"
+                placeholder="Search something..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={handleKeyDown}
+              />
+            </div>
+            <p className="font-normal text-base text-gray-500">
+              200+ Destinations to explore.
+            </p>
+
+            <DestinationsContainer
+              searchQuery={searchQuery}
+              selectedAmenity={selectedAmenity}
+              onCardClick={(destination) => setActiveDestination(destination)}
+            />
+          </div>
+          <GoogleMapComponent activeDestination={activeDestination} />
+        </div>
       </section>
     </>
   );

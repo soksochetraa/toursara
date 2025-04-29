@@ -23,7 +23,7 @@ const NavBar = () => {
 
   const navClassName =
     location.pathname === "/explore"
-      ? "relative navbar w-full flex justify-between px-[50px] py-[30px] z-50"
+      ? "relative navbar w-full flex justify-between px-[100px] py-[30px] z-50"
       : "navbar w-full flex justify-between px-[50px] py-[30px] z-10";
 
   return (

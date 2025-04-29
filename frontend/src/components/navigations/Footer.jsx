@@ -3,8 +3,8 @@ import { Facebook, Instagram, Youtube, Phone, AtSign } from "lucide-react";
 
 function Footer() {
   return (
-    <footer className="w-full flex justify-center items-center">
-      <div className="h-[332px] w-[1440px] flex flex-col items-center gap-5">
+    <footer className=" w-full flex justify-center items-center">
+      <div className="h-[332px] w-full flex flex-col items-center gap-5">
         <div className="flex justify-between self-stretch px-[120px]">
           <div className="flex flex-col gap-[31px] grow">
             <img src={logo} alt="Logo" className="w-[75px] h-[85px]" />

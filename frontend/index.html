@@ -3,24 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>toursara.com</title>
+    <title>Toursara</title>
     <link
       rel="shortcut icon"
       href="./src/assets/images/toursara_logo.svg"
       type="image/x-icon"
     />
   </head>
-  <body
-    style="
-      margin: 0;
-      padding: 0;
-      overflow-y: scroll;
-      -ms-overflow-style: none;
-      scrollbar-width: thin;
-      scrollbar-color: transparent transparent;
-    "
-  >
-    <div id="root"></div>
+  <body style="overflow: hidden; height: 100vh; margin: 0; padding: 0">
+    <div
+      id="root"
+      style="
+        transform: scale(0.75);
+        transform-origin: top left;
+        width: 133.3333%;
+        height: 133.3333%;
+        margin: 0;
+        padding: 0;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+      "
+    ></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
