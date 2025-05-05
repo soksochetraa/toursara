@@ -1,11 +1,23 @@
 import Button from "../components/buttons/ButtonGetStart";
 import YouTubePlayer from "../components/media/YoutubePlayer";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../Auth";
 import { useEffect } from "react";
+import React, { useState } from "react";
 import { Facebook, Instagram, Youtube } from "lucide-react";
+import Img from "../assets/images/img.svg";
+import Imag1 from "../assets/images/imag1.svg";
+import Imag2 from "../assets/images/imag2.svg";
+import Imag3 from "../assets/images/imag3.png";
+import Imag4 from "../assets/images/imag4.png";
+import Imag5 from "../assets/images/imag5.png";
+import Imag6 from "../assets/images/imag6.png";
+import Fram from "../assets/images/fram-imag.svg";
+import Card from "../components/cards/Crad";
 
 function Home() {
+  const [activeCategory, setActiveCategory] = useState("Cultural");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -50,6 +62,197 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <div className="flex items-center justify-center flex-col">
+        <div className="flex items-start justify-between px-[45px] py-[50px] w-auto h-auto gap-[83px]">
+          <div className="w-[566px] h-[611] relative">
+            <img src={Fram} alt="" />
+            <div className="absolute top-15 left-7 w-[498px]">
+              <img src={Img} alt="" />
+            </div>
+          </div>
+
+          <div className="w-[566px]  flex flex-col justify-between items-start h-[611px]">
+            <p className="text-[64px] font-[700] font-lato">About Us</p>
+            <p className="text-[var(--text-color,#505050)] font-lato text-[16px] font-[450] leading-[29px] w-[600px] h-[174px]">
+              We specialize in developing high-quality web applications, booking
+              platforms, and tourism management systems, ensuring that
+              businesses and travelers can connect effortlessly. With
+              cutting-edge technologies and a user-centric approach, we craft
+              solutions that drive growth, improve efficiency, and elevate the
+              tourism experience across Cambodia.
+            </p>
+            <div className="hidden md:flex mt-4">
+              <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-red-500 text-white border-[1.5px] border-red-500 rounded-lg font-medium text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
+                <span className="font-bold transition-all duration-300 group-hover:text-red-600">
+                  SEE MORE
+                </span>
+                <span className="absolute top-[100%] left-[100%] w-[300px] h-[150px] bg-white rounded-full z-[-1] transition-all duration-300 group-hover:top-[-30px] group-hover:left-[-30px]"></span>
+              </button>
+            </div>
+
+            <div className="w-[500px] h-[100px] flex items-center justify-between gap-[50px]">
+              <div className="w-[136px] h-[100px] flex items-center justify-between flex-col">
+                <p className="text-[#EF3A45] font-[Poppins] text-[36px] font-normal leading-[100%]">
+                  200+
+                </p>
+                <p className="text-[#222] text-center font-[Poppins] text-[20px] font-normal leading-[140%] capitalize">
+                  Customer & partners
+                </p>
+              </div>
+              <div className="w-[136px] h-[100px] flex items-center justify-between flex-col">
+                <p className="text-[#EF3A45] font-[Poppins] text-[36px] font-normal leading-[100%]">
+                  500+
+                </p>
+                <p className="text-[#222] text-center font-[Poppins] text-[20px] font-normal leading-[140%] capitalize">
+                  Place in the world
+                </p>
+              </div>
+              <div className="w-[136px] h-[100px] flex items-center justify-between flex-col">
+                <p className="text-[#EF3A45] font-[Poppins] text-[36px] font-normal leading-[100%]">
+                  1k+
+                </p>
+                <p className="text-[#222] text-center font-[Poppins] text-[20px] font-normal leading-[140%] capitalize">
+                  Success Journey
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-center flex-col mt-[60px]">
+        <p className="text-[#222] font-poppins text-[56px] not-italic font-extrabold leading-[100%]">
+          The <span className="text-[#FA3636]">best place</span> for vacation
+        </p>
+
+        <ul className="w-auto h-auto flex justify-between items-center gap-[15px] mt-[63.5px] mb-11">
+          <div className="w-[150px] h-[26px] text-center ">
+            <li>
+              <Link
+                to="#"
+                onClick={() => setActiveCategory("Cultural")}
+                className={`font-lato text-[20px] ${
+                  activeCategory === "Cultural"
+                    ? "text-[#EF3A45] after:flex after:w-[40px] after:mt-1 after:h-[2px] after:bg-[#EF3A45] after:ml-14 rounded-[40px] font-lato font-[500] "
+                    : "text-[#222] font-[500] font-lato"
+                }`}
+              >
+                Cultural
+              </Link>
+            </li>
+          </div>
+
+          <div className="w-[150px] h-[26px] text-center">
+            <li>
+              <Link
+                to="#"
+                onClick={() => setActiveCategory("Popular")}
+                className={`font-lato text-[20px] ${
+                  activeCategory === "Popular"
+                    ? "text-[#EF3A45] after:flex after:w-[40px] after:mt-1 after:h-[2px] after:bg-[#EF3A45] after:ml-14 rounded-[40px] font-lato font-[500] "
+                    : "text-[#222] font-[500] font-lato"
+                }`}
+              >
+                Popular
+              </Link>
+            </li>
+          </div>
+
+          <div className="w-[150px] h-[26px] text-center">
+            <li>
+              <Link
+                to="#"
+                onClick={() => setActiveCategory("Recommended")}
+                className={`font-lato text-[20px] ${
+                  activeCategory === "Recommended"
+                    ? "text-[#EF3A45] after:flex after:w-[75px] after:mt-1 after:h-[2px] after:bg-[#EF3A45] after:ml-9.5 rounded-[40px] font-lato font-[500] "
+                    : "text-[#222] font-[500] font-latol"
+                }`}
+              >
+                Recommended
+              </Link>
+            </li>
+          </div>
+
+          <div className="w-[150px] h-[26px] text-center">
+            <li>
+              <Link
+                to="#"
+                onClick={() => setActiveCategory("Festivals")}
+                className={`font-lato text-[20px] ${
+                  activeCategory === "Festivals"
+                    ? "text-[#EF3A45] after:flex after:w-[50px] after:mt-1 after:h-[2px] after:bg-[#EF3A45] after:ml-12.5 rounded-[40px] font-lato font-[500] "
+                    : "text-[#222] font-[500] font-lato"
+                }`}
+              >
+                Festivals
+              </Link>
+            </li>
+          </div>
+        </ul>
+
+        <div className="flex flex-wrap items-center content-center gap-[25px] w-[1440px] px-[5px] pl-[10px]">
+          <Card
+            bgImg={Imag1}
+            text={
+              <>
+                Explore our World’s Largest <br /> Religion Monument
+              </>
+            }
+          />
+          <Card
+            bgImg={Imag2}
+            text={
+              <>
+                Explore our Angkor <br /> National Park
+              </>
+            }
+          />
+          <Card
+            bgImg={Imag3}
+            text={
+              <>
+                Explore our Rich’s <br />
+                Cultural Khmer Art
+              </>
+            }
+          />
+          <Card
+            bgImg={Imag4}
+            text={
+              <>
+                Explore our Wonderful <br /> Capital of Cambodia
+              </>
+            }
+          />
+          <Card
+            bgImg={Imag5}
+            text={
+              <>
+                Explore our genocide <br /> Museum Toul Sleng
+              </>
+            }
+          />
+          <Card
+            bgImg={Imag6}
+            text={
+              <>
+                Explore our Bayon <br /> Religions Temple
+              </>
+            }
+          />
+        </div>
+
+        <div className="hidden md:flex mt-4">
+          <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-white text-red-500 border-[1.5px] border-red-500 rounded-lg  text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
+            <span className="font-[600] transition-all duration-300 group-hover:text-white">
+              View All
+            </span>
+            <span className="absolute top-[100%] left-[100%] w-[300px] h-[150px] bg-red-500 rounded-full z-[-1] transition-all duration-300 group-hover:top-[-30px] group-hover:left-[-30px]"></span>
+          </button>
+        </div>
+      </div>
     </>
   );
 }
