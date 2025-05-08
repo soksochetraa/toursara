@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import HeroBg from "../assets/images/bg_hero_section_explore.jpg";
 import ProvinceContainer from "../components/container/ProvincesContainer";
 import provinces from "../data/provinces";
@@ -7,9 +8,18 @@ import GoogleMapComponent from "../components/cards/GoogleMapComponent";
 
 function Explore() {
   const [activeDestination, setActiveDestination] = useState(null);
-
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedAmenity, setSelectedAmenity] = useState("");
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.search) {
+      setSearchQuery(location.state.search);
+      document
+        .getElementById("search-section")
+        ?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location.state]);
 
   const handleSearchClick = () => {
     setSearchQuery(searchQuery);
@@ -60,7 +70,7 @@ function Explore() {
         </div>
       </section>
 
-      <section className="">
+      <section>
         <div className="flex items-center justify-center gap-2.5 self-stretch p-[30px]">
           <h1 className="w-[1440px] text-start font-bold text-[32px] text-[#222222]">
             Search to Explore.
@@ -70,6 +80,12 @@ function Explore() {
         <div
           id="search-section"
           className="w-full flex justify-center items-start gap-[18px] p-[30px]"
+          style={{
+            transform: "scale(0.75)",
+            transformOrigin: "top left",
+            width: "133.3333%",
+            height: "133.3333%",
+          }}
         >
           <div className="w-[840px] flex flex-col gap-4 px-10 pb-10">
             <div className="w-[760px] h-[48px] flex items-center gap-4 self-stretch bg-white pl-6 pr-1 py-1 rounded-full border border-solid border-gray-200">
@@ -89,7 +105,10 @@ function Explore() {
             <DestinationsContainer
               searchQuery={searchQuery}
               selectedAmenity={selectedAmenity}
-              onCardClick={(destination) => setActiveDestination(destination)}
+              onCardClick={(destination) => {
+                setActiveDestination(destination);
+                navigate("/explore/detail");
+              }}
             />
           </div>
           <GoogleMapComponent activeDestination={activeDestination} />

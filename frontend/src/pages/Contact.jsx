@@ -17,16 +17,16 @@ function Contact() {
   };
 
   return (
-    <section className="w-full h-[900px] bg-white flex justify-center items-center">
+    <section className="w-full h-[900px] bg-white flex justify-center mb-1 items-center">
       <div className="w-[1440px] h-[900px] relative bg-white flex justify-center items-center">
         <div className="w-[1020px] h-[900px] flex items-center justify-center">
           <form
             className="flex flex-col items-center justify-center gap-10"
             action=""
           >
-            <div className="w-[545px] flex flex-col items-end gap-5">
+            <div className="w-[545px] p-8 flex flex-col items-end gap-5">
               <h1 className="w-[545px] font-bold text-[54px]">Get in Touch</h1>
-              <p className="font-semibold text-[14px] leading-[24px] text-black">
+              <p className="w-[545px] font-semibold text-[14px] leading-[24px] text-black">
                 Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu
                 leo molestie vel, ornare non id blandit netus.
               </p>
@@ -108,7 +108,16 @@ function Contact() {
           </form>
         </div>
         <div className="absolute right-[100px] top-0 w-[520px] h-[900px] flex justify-center items-center">
-          <SmallMap />
+          <SmallMap
+            width="600px"
+            height="750px"
+            borderRadius="0px"
+            lat={13.4125}
+            lng={103.866667}
+            title="Angkor Wat"
+            province="Siem Reap, Cambodia"
+            radius={800}
+          />
         </div>
         <div className="w-[419px] h-[900px] bg-[#ef3a45]"></div>
       </div>

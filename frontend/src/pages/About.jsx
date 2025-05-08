@@ -1,5 +1,4 @@
 import FrameImage from "../assets/images/frame_about_us.jpg";
-import Picture from "../assets/images/49.jpg";
 import Button from "../components/buttons/ButtonGetStart";
 import { useNavigate } from "react-router-dom";
 
@@ -16,9 +15,9 @@ function About() {
           }}
         >
           <span
-            className="w-[500px] h-[500px] bg-cover bg-no-repeat "
+            className="w-[500px] h-[500px] bg-cover bg-no-repeat bg-center"
             style={{
-              backgroundImage: `url(${Picture})`,
+              backgroundImage: `url(https://img.freepik.com/free-vector/flat-design-illustration-web-developers_23-2148817995.jpg?ga=GA1.1.495992702.1746376184&semt=ais_hybrid&w=740)`,
             }}
           ></span>
         </div>

@@ -14,7 +14,7 @@ import Imag4 from "../assets/images/imag4.png";
 import Imag5 from "../assets/images/imag5.png";
 import Imag6 from "../assets/images/imag6.png";
 import Fram from "../assets/images/fram-imag.svg";
-import Card from "../components/cards/Crad";
+import HighlightCrad from "../components/cards/HighlightCrad";
 
 function Home() {
   const [activeCategory, setActiveCategory] = useState("Cultural");
@@ -50,7 +50,7 @@ function Home() {
           </div>
         </div>
         <div className="w-[1420px] flex flex-col justify-center items-center gap-2.5 px-[30px] relative">
-          <YouTubePlayer videoSrc="https://www.youtube.com/embed/pVbDm6ecfww?si=22RaOt1X-HZC4R13" />
+          <YouTubePlayer videoSrc="https://youtu.be/KsDGDzwuQ-I?si=BqA3JvDqKWvdrnQX" />
           <div className=" absolute top-[50%] right-[0px] transform -translate-y-1/2 flex flex-col items-center justify-around gap-3.5">
             <h1 className="h-[270px]text-start font-bold text-[24px] text-[#fa3636] rotate-90 mb-[48px] ">
               FOLLOW US
@@ -68,7 +68,10 @@ function Home() {
           <div className="w-[566px] h-[611] relative">
             <img src={Fram} alt="" />
             <div className="absolute top-15 left-7 w-[498px]">
-              <img src={Img} alt="" />
+              <img
+                src="https://img.freepik.com/free-vector/flat-design-illustration-web-developers_23-2148817995.jpg?ga=GA1.1.495992702.1746376184&semt=ais_hybrid&w=740"
+                alt=""
+              />
             </div>
           </div>
 
@@ -93,26 +96,26 @@ function Home() {
 
             <div className="w-[500px] h-[100px] flex items-center justify-between gap-[50px]">
               <div className="w-[136px] h-[100px] flex items-center justify-between flex-col">
-                <p className="text-[#EF3A45] font-[Poppins] text-[36px] font-normal leading-[100%]">
+                <p className="text-[#EF3A45] text-[36px] font-normal leading-[100%]">
                   200+
                 </p>
-                <p className="text-[#222] text-center font-[Poppins] text-[20px] font-normal leading-[140%] capitalize">
+                <p className="text-[#222] text-center text-[20px] font-normal leading-[140%] capitalize">
                   Customer & partners
                 </p>
               </div>
               <div className="w-[136px] h-[100px] flex items-center justify-between flex-col">
-                <p className="text-[#EF3A45] font-[Poppins] text-[36px] font-normal leading-[100%]">
+                <p className="text-[#EF3A45] text-[36px] font-normal leading-[100%]">
                   500+
                 </p>
-                <p className="text-[#222] text-center font-[Poppins] text-[20px] font-normal leading-[140%] capitalize">
+                <p className="text-[#222] text-center text-[20px] font-normal leading-[140%] capitalize">
                   Place in the world
                 </p>
               </div>
               <div className="w-[136px] h-[100px] flex items-center justify-between flex-col">
-                <p className="text-[#EF3A45] font-[Poppins] text-[36px] font-normal leading-[100%]">
+                <p className="text-[#EF3A45] text-[36px] font-normal leading-[100%]">
                   1k+
                 </p>
-                <p className="text-[#222] text-center font-[Poppins] text-[20px] font-normal leading-[140%] capitalize">
+                <p className="text-[#222] text-center text-[20px] font-normal leading-[140%] capitalize">
                   Success Journey
                 </p>
               </div>
@@ -193,49 +196,61 @@ function Home() {
         </ul>
 
         <div className="flex flex-wrap items-center content-center gap-[25px] w-[1440px] px-[5px] pl-[10px]">
-          <Card
-            bgImg={Imag1}
+          <HighlightCrad
+            bgImg={
+              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
+            }
             text={
               <>
-                Explore our World’s Largest <br /> Religion Monument
+                Explore our World's Largest <br /> Religion Monument
               </>
             }
           />
-          <Card
-            bgImg={Imag2}
+          <HighlightCrad
+            bgImg={
+              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
+            }
             text={
               <>
                 Explore our Angkor <br /> National Park
               </>
             }
           />
-          <Card
-            bgImg={Imag3}
+          <HighlightCrad
+            bgImg={
+              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
+            }
             text={
               <>
-                Explore our Rich’s <br />
+                Explore our Rich's <br />
                 Cultural Khmer Art
               </>
             }
           />
-          <Card
-            bgImg={Imag4}
+          <HighlightCrad
+            bgImg={
+              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
+            }
             text={
               <>
                 Explore our Wonderful <br /> Capital of Cambodia
               </>
             }
           />
-          <Card
-            bgImg={Imag5}
+          <HighlightCrad
+            bgImg={
+              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
+            }
             text={
               <>
                 Explore our genocide <br /> Museum Toul Sleng
               </>
             }
           />
-          <Card
-            bgImg={Imag6}
+          <HighlightCrad
+            bgImg={
+              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
+            }
             text={
               <>
                 Explore our Bayon <br /> Religions Temple

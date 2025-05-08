@@ -4,24 +4,23 @@ import {
   LoadScript,
   Marker,
   InfoWindow,
+  Circle,
 } from "@react-google-maps/api";
 
-const containerStyle = {
-  width: "545px",
-  height: "700px",
-};
-
-const ruppLocation = {
-  lat: 11.568271,
-  lng: 104.888481,
-  title: "Royal University of Phnom Penh (RUPP)",
-  province: "Phnom Penh, Cambodia",
-  imageUrl:
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Royal_University_of_Phnom_Penh.jpg/500px-Royal_University_of_Phnom_Penh.jpg",
-};
-
-const SmallMap = () => {
-  const [selectedPlace, setSelectedPlace] = useState(ruppLocation);
+const SmallMap = ({
+  width = "545px",
+  height = "700px",
+  borderRadius = "0px",
+  lat = 11.5564,
+  lng = 104.9282,
+  title = "Royal University of Phnom Penh (RUPP)",
+  province = "Phnom Penh, Cambodia",
+  imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Royal_University_of_Phnom_Penh.jpg/500px-Royal_University_of_Phnom_Penh.jpg",
+  radius = 0,
+}) => {
+  const containerStyle = { width, height, borderRadius };
+  const location = { lat, lng, title, province, imageUrl };
+  const [selectedPlace, setSelectedPlace] = useState(location);
   const mapRef = useRef(null);
 
   const markerIcon = useMemo(() => {
@@ -32,59 +31,66 @@ const SmallMap = () => {
       };
     }
     return null;
-  }, [window.google]);
+  }, []);
 
   const onLoad = (map) => {
     mapRef.current = map;
-    map.panTo(ruppLocation);
+    map.panTo({ lat, lng });
   };
 
   return (
     <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={ruppLocation}
+        center={{ lat, lng }}
         zoom={15}
         onLoad={onLoad}
       >
         <Marker
-          position={{ lat: ruppLocation.lat, lng: ruppLocation.lng }}
+          position={{ lat, lng }}
           icon={markerIcon}
-          onClick={() => setSelectedPlace(ruppLocation)}
+          onClick={() => setSelectedPlace(location)}
         />
 
         {selectedPlace && (
           <InfoWindow
-            position={{ lat: selectedPlace.lat, lng: selectedPlace.lng }}
+            position={{ lat, lng }}
             onCloseClick={() => setSelectedPlace(null)}
           >
             <div className="w-[220px]">
               <img
-                src={selectedPlace.imageUrl}
-                alt={selectedPlace.title}
+                src={imageUrl}
+                alt={title}
                 className="w-full h-24 object-cover rounded-md mb-2"
               />
               <h2 className="font-semibold text-[#222] text-base mb-1">
-                {selectedPlace.title}
+                {title}
               </h2>
-              <p className="text-sm text-gray-600 mb-2">
-                {selectedPlace.province}
-              </p>
-              <button
-                onClick={() => {
-                  if (mapRef.current) {
-                    mapRef.current.panTo({
-                      lat: selectedPlace.lat,
-                      lng: selectedPlace.lng,
-                    });
-                  }
-                }}
-                className="text-[#ef3a45] font-medium text-sm hover:underline"
+              <p className="text-sm text-gray-600 mb-2">{province}</p>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#ef3a45] cursor-pointer font-medium text-sm hover:underline"
               >
-                📍 View on Map
-              </button>
+                View on Map
+              </a>
             </div>
           </InfoWindow>
+        )}
+
+        {radius > 0 && (
+          <Circle
+            center={{ lat, lng }}
+            radius={radius}
+            options={{
+              strokeColor: "#EF3A45",
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              fillColor: "#EF3A4544",
+              fillOpacity: 0.35,
+            }}
+          />
         )}
       </GoogleMap>
     </LoadScript>

@@ -1,38 +1,8 @@
-import img1 from "../assets/images/1.jpg";
-import img2 from "../assets/images/2.jpg";
-import img3 from "../assets/images/3.jpg";
-import img4 from "../assets/images/4.jpg";
-import img5 from "../assets/images/5.jpg";
-import img6 from "../assets/images/6.jpg";
-import img7 from "../assets/images/7.jpg";
-import img8 from "../assets/images/8.jpg";
-import img9 from "../assets/images/9.jpg";
-import img10 from "../assets/images/10.jpg";
-import img11 from "../assets/images/11.jpg";
-import img12 from "../assets/images/12.jpg";
-import img13 from "../assets/images/13.jpg";
-import img14 from "../assets/images/14.jpg";
-import img15 from "../assets/images/15.jpg";
-import img16 from "../assets/images/16.jpg";
-import img17 from "../assets/images/17.jpg";
-import img18 from "../assets/images/18.jpg";
-import img19 from "../assets/images/19.jpg";
-import img20 from "../assets/images/20.jpg";
-import img21 from "../assets/images/21.jpg";
-import img22 from "../assets/images/22.jpg";
-import img23 from "../assets/images/23.jpg";
-import img24 from "../assets/images/24.jpg";
-import img25 from "../assets/images/25.jpg";
-import img26 from "../assets/images/26.jpg";
-import img27 from "../assets/images/27.jpg";
-import img28 from "../assets/images/28.jpg";
-import img29 from "../assets/images/29.jpg";
-import img30 from "../assets/images/30.jpg";
-
 const mockDestinations = [
   {
     id: 1,
-    image: img1,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Siem Reap, Cambodia",
     title: "Angkor Wat",
     description:
@@ -46,7 +16,8 @@ const mockDestinations = [
   },
   {
     id: 2,
-    image: img2,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Kep, Cambodia",
     title: "Kep National Park",
     description:
@@ -60,7 +31,8 @@ const mockDestinations = [
   },
   {
     id: 3,
-    image: img3,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Phnom Penh, Cambodia",
     title: "Royal Palace",
     description:
@@ -74,7 +46,8 @@ const mockDestinations = [
   },
   {
     id: 4,
-    image: img4,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Sihanoukville, Cambodia",
     title: "Otres Beach",
     description:
@@ -88,7 +61,8 @@ const mockDestinations = [
   },
   {
     id: 5,
-    image: img5,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Koh Rong, Cambodia",
     title: "Koh Rong Island",
     description:
@@ -102,7 +76,8 @@ const mockDestinations = [
   },
   {
     id: 6,
-    image: img6,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Battambang, Cambodia",
     title: "Bamboo Train",
     description:
@@ -116,7 +91,8 @@ const mockDestinations = [
   },
   {
     id: 7,
-    image: img7,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Kratie, Cambodia",
     title: "Irrawaddy Dolphins",
     description: "Spot the endangered Irrawaddy dolphins in the Mekong River.",
@@ -129,7 +105,8 @@ const mockDestinations = [
   },
   {
     id: 8,
-    image: img8,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Kampot, Cambodia",
     title: "Bokor Mountain",
     description:
@@ -143,7 +120,8 @@ const mockDestinations = [
   },
   {
     id: 9,
-    image: img9,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Siem Reap, Cambodia",
     title: "Bayon Temple",
     description:
@@ -157,7 +135,8 @@ const mockDestinations = [
   },
   {
     id: 10,
-    image: img10,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Mondulkiri, Cambodia",
     title: "Sen Monorom Waterfall",
     description:
@@ -171,7 +150,8 @@ const mockDestinations = [
   },
   {
     id: 11,
-    image: img11,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Kampong Thom, Cambodia",
     title: "Phnom Santuk",
     description:
@@ -185,7 +165,8 @@ const mockDestinations = [
   },
   {
     id: 12,
-    image: img12,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Preah Vihear, Cambodia",
     title: "Preah Vihear Temple",
     description:
@@ -199,7 +180,8 @@ const mockDestinations = [
   },
   {
     id: 13,
-    image: img13,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Ratanakiri, Cambodia",
     title: "Virachey National Park",
     description:
@@ -213,11 +195,12 @@ const mockDestinations = [
   },
   {
     id: 14,
-    image: img14,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Phnom Penh, Cambodia",
     title: "Tuol Sleng Genocide Museum",
     description:
-      "Visit the haunting site of Cambodia’s tragic history during the Khmer Rouge era.",
+      "Visit the haunting site of Cambodia's tragic history during the Khmer Rouge era.",
     amenities: "History · Culture",
     rating: "4.7",
     reviews: "1021",
@@ -227,7 +210,8 @@ const mockDestinations = [
   },
   {
     id: 15,
-    image: img15,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Kampong Cham, Cambodia",
     title: "Bamboo Bridge",
     description:
@@ -241,7 +225,8 @@ const mockDestinations = [
   },
   {
     id: 16,
-    image: img16,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Sihanoukville, Cambodia",
     title: "Ream National Park",
     description:
@@ -255,7 +240,8 @@ const mockDestinations = [
   },
   {
     id: 17,
-    image: img17,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Koh Rong, Cambodia",
     title: "Long Set Beach",
     description:
@@ -269,7 +255,8 @@ const mockDestinations = [
   },
   {
     id: 18,
-    image: img18,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Siem Reap, Cambodia",
     title: "Ta Prohm",
     description:
@@ -283,11 +270,12 @@ const mockDestinations = [
   },
   {
     id: 19,
-    image: img19,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Phnom Penh, Cambodia",
     title: "National Museum of Cambodia",
     description:
-      "Explore Cambodia’s rich cultural history and artifacts in this stunning museum.",
+      "Explore Cambodia's rich cultural history and artifacts in this stunning museum.",
     amenities: "History · Culture",
     rating: "4.6",
     reviews: "987",
@@ -297,7 +285,8 @@ const mockDestinations = [
   },
   {
     id: 20,
-    image: img20,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Kandal, Cambodia",
     title: "Tonle Bati",
     description:
@@ -311,7 +300,8 @@ const mockDestinations = [
   },
   {
     id: 21,
-    image: img21,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Battambang, Cambodia",
     title: "Phnom Banan",
     description:
@@ -325,7 +315,8 @@ const mockDestinations = [
   },
   {
     id: 22,
-    image: img22,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Kampong Thom, Cambodia",
     title: "Sambor Prei Kuk",
     description:
@@ -339,7 +330,8 @@ const mockDestinations = [
   },
   {
     id: 23,
-    image: img23,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Ratanakiri, Cambodia",
     title: "Yak Loum Lake",
     description:
@@ -353,7 +345,8 @@ const mockDestinations = [
   },
   {
     id: 24,
-    image: img24,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Preah Vihear, Cambodia",
     title: "Preah Vihear Temple",
     description:
@@ -367,7 +360,8 @@ const mockDestinations = [
   },
   {
     id: 25,
-    image: img25,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Sihanoukville, Cambodia",
     title: "Koh Rong Samloem",
     description:
@@ -381,7 +375,8 @@ const mockDestinations = [
   },
   {
     id: 26,
-    image: img26,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Kep, Cambodia",
     title: "Kep Beach",
     description:
@@ -395,7 +390,8 @@ const mockDestinations = [
   },
   {
     id: 27,
-    image: img27,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Phnom Penh, Cambodia",
     title: "Wat Phnom",
     description:
@@ -409,11 +405,12 @@ const mockDestinations = [
   },
   {
     id: 28,
-    image: img28,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Sihanoukville, Cambodia",
     title: "Serendipity Beach",
     description:
-      "One of Sihanoukville’s most famous beaches, perfect for lounging or beach activities.",
+      "One of Sihanoukville's most famous beaches, perfect for lounging or beach activities.",
     amenities: "Beaches · Nature · Adventure",
     rating: "4.3",
     reviews: "920",
@@ -423,7 +420,8 @@ const mockDestinations = [
   },
   {
     id: 29,
-    image: img29,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Koh Rong, Cambodia",
     title: "Sok San Beach",
     description:
@@ -437,7 +435,8 @@ const mockDestinations = [
   },
   {
     id: 30,
-    image: img30,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
     location: "Battambang, Cambodia",
     title: "Banan Temple",
     description:

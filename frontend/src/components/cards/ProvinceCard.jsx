@@ -1,7 +1,7 @@
 function ProvinceCard({ province, image, width, height }) {
   return (
     <div
-      className="cursor-pointer overflow-hidden relative flex flex-col justify-center items-center bg-cover bg-no-repeat rounded-lg group"
+      className="cursor-pointer overflow-hidden relative flex flex-col justify-center items-center bg-cover bg-no-repeat bg-center rounded-lg group"
       style={{
         backgroundImage: `url(${image || province.image})`,
         width: width,

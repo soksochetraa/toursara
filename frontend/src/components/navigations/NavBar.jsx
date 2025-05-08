@@ -15,20 +15,31 @@ const NavBar = () => {
   const location = useLocation();
 
   const getActivePath = (path) => {
-    if (location.pathname === "/explore") {
+    if (
+      location.pathname === "/explore" ||
+      location.pathname === "/explore/detail"
+    ) {
       return path === "/";
+    } else if (location.pathname === "/hotel/detail") {
+      return path === "/hotel";
     }
     return location.pathname === path;
   };
 
-  const navClassName =
-    location.pathname === "/explore"
-      ? "relative navbar w-full flex justify-between px-[100px] py-[30px] z-50"
-      : "navbar w-full flex justify-between px-[50px] py-[30px] z-10";
+  const navClassName = ["/explore", "/hotel", "/travel"].includes(
+    location.pathname
+  )
+    ? "relative navbar w-full flex justify-between px-[100px] py-[30px] z-50"
+    : "navbar w-full flex justify-between px-[100px] py-[30px] z-10";
 
   return (
     <nav className={navClassName}>
-      <img src={logo} alt="Logo" className="w-[111px] h-[125px]" />
+      <img
+        src={logo}
+        alt="Logo"
+        className="w-[111px] h-[125px] cursor-pointer "
+        onClick={() => (window.location.href = "/")}
+      />
       <ul className="nav-links flex justify-around items-center w-[800px] h-[75px]">
         {links.map((link) => (
           <li

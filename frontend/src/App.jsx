@@ -7,6 +7,8 @@ import Hotel from "./pages/Hotel";
 import Travel from "./pages/Travel";
 import Contact from "./pages/Contact";
 import Explore from "./pages/Explore";
+import DestinationsDetail from "./pages/DestinationsDetail";
+import HotelDetail from "./pages/HotelDetail";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
       {
         path: "explore",
         element: <Explore />,
+      },
+      {
+        path: "explore/detail",
+        element: <DestinationsDetail />,
+      },
+      {
+        path: "hotel/detail",
+        element: <HotelDetail />,
       },
     ],
   },

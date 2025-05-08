@@ -7,7 +7,7 @@ import {
 } from "@react-google-maps/api";
 
 const containerStyle = {
-  width: "600px",
+  width: "1100px",
   height: "980px",
   borderRadius: "8px",
 };
@@ -69,7 +69,7 @@ const GoogleMapComponent = ({ activeDestination }) => {
           >
             <div className="w-[220px]">
               <img
-                src={selectedPlace.imageUrl}
+                src={selectedPlace.image}
                 alt={selectedPlace.title}
                 className="w-full h-24 object-cover rounded-md mb-2"
               />
@@ -81,16 +81,16 @@ const GoogleMapComponent = ({ activeDestination }) => {
               </p>
               <button
                 onClick={() => {
-                  if (mapRef.current) {
-                    mapRef.current.panTo({
-                      lat: selectedPlace.lat,
-                      lng: selectedPlace.lng,
-                    });
+                  const currentPath = window.location.pathname;
+                  if (currentPath.startsWith("/explore")) {
+                    window.location.href = "/explore/detail";
+                  } else if (currentPath.startsWith("/hotel")) {
+                    window.location.href = "/hotel/detail";
                   }
                 }}
-                className="text-[#ef3a45] font-medium text-sm hover:underline"
+                className="text-[#ef3a45] cursor-pointer font-medium text-sm hover:underline"
               >
-                📍 View on Map
+                See more.
               </button>
             </div>
           </InfoWindow>
