@@ -268,6 +268,26 @@ function Home() {
           </button>
         </div>
       </div>
+
+      <div className="flex items-center justify-center  mt-[60px] py-[50px] px-[20px]">
+        <div className="flex items-start justify-center flex-col gap-[32px] w-[384px]">
+          <p className="text-[#222] font-poppins text-[48px] not-italic font-extrabold leading-[100%]">
+            Why <span className=" text-[#FA3636]">Choose</span> Us
+          </p>
+          <p className="w-[381px] h-auto text-[#222] text-[18px] font-normal font-lato">
+            We ensure that you’ll embark on a perfectly planned, safe vacation
+            at a price you can afford.
+          </p>
+          <div className="hidden md:flex mt-4">
+            <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-white text-red-500 border-[1.5px] border-red-500 rounded-lg  text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
+              <span className="font-[600] transition-all duration-300 group-hover:text-white">
+                Contact US
+              </span>
+              <span className="absolute top-[100%] left-[100%] w-[300px] h-[150px] bg-red-500 rounded-full z-[-1] transition-all duration-300 group-hover:top-[-30px] group-hover:left-[-30px]"></span>
+            </button>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
