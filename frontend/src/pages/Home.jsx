@@ -254,7 +254,7 @@ function Home() {
           />
           <HighlightCrad
             bgImg={
-              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5nZXJwZW5n/LWluY3J5cHRlZC1m/b3Jtcy9mYW50YXN5/L3BuZy1pbWFnZXMv/MjAyMC82LzIxL3Bu/Z3RyZWUtc3RvY2st/bGFyZ2UtaW1hZ2UtdmFyaWFibGUuanBn"
+              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
             }
             text={
               <>
@@ -264,7 +264,7 @@ function Home() {
           />
           <HighlightCrad
             bgImg={
-              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5nZXJwZW5n/LWluY3J5cHRlZC1m/b3Jtcy9mYW50YXN5/L3BuZy1pbWFnZXMv/MjAyMC82LzIxL3Bu/Z3RyZWUtc3RvY2stbGFyZ2UtaW1hZ2UtdmFyaWFibGUuanBn"
+              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
             }
             text={
               <>
