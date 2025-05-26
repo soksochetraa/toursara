@@ -6,14 +6,13 @@ import { auth } from "../Auth";
 import { useEffect } from "react";
 import React, { useState } from "react";
 import { Facebook, Instagram, Youtube } from "lucide-react";
-import Img from "../assets/images/img.svg";
-import Imag1 from "../assets/images/imag1.svg";
-import Imag2 from "../assets/images/imag2.svg";
-import Imag3 from "../assets/images/imag3.png";
-import Imag4 from "../assets/images/imag4.png";
-import Imag5 from "../assets/images/imag5.png";
-import Imag6 from "../assets/images/imag6.png";
 import Fram from "../assets/images/fram-imag.svg";
+import Icon from "../assets/images/icon.svg";
+import Icon1 from "../assets/images/icon_money.svg";
+import Icon2 from "../assets/images/icon_world.svg";
+import ImgVideo1 from "../assets/images/img_video1.svg";
+import ImgVideo2 from "../assets/images/img_video2.svg";
+import ImgVideo3 from "../assets/images/img_video3.svg";
 import HighlightCrad from "../components/cards/HighlightCrad";
 
 function Home() {
@@ -25,6 +24,21 @@ function Home() {
       navigate("/explore");
     }
   }, []);
+
+  const ImageSlider = () => {
+    const images = [ImgVideo1, ImgVideo2, ImgVideo3];
+
+    // Initial center is index 1
+    const [order, setOrder] = useState([0, 1, 2]);
+
+    const handleImageClick = (index) => {
+      if (index === 1) return; // already center
+      const newOrder = [...order];
+      // Swap clicked image with center (index 1)
+      [newOrder[1], newOrder[index]] = [newOrder[index], newOrder[1]];
+      setOrder(newOrder);
+    };
+  };
 
   return (
     <>
@@ -269,8 +283,8 @@ function Home() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center  mt-[60px] py-[50px] px-[20px]">
-        <div className="flex items-start justify-center flex-col gap-[32px] w-[384px]">
+      <div className="flex items-center justify-center mt-[60px] py-[50px] px-[20px]">
+        <div className="flex items-start justify-center flex-col gap-[32px] w-[384px]  mr-[60px]">
           <p className="text-[#222] font-poppins text-[48px] not-italic font-extrabold leading-[100%]">
             Why <span className=" text-[#FA3636]">Choose</span> Us
           </p>
@@ -286,6 +300,87 @@ function Home() {
               <span className="absolute top-[100%] left-[100%] w-[300px] h-[150px] bg-red-500 rounded-full z-[-1] transition-all duration-300 group-hover:top-[-30px] group-hover:left-[-30px]"></span>
             </button>
           </div>
+        </div>
+        <div className="flex items-center justify-between w-[956px]">
+          <div className="flex items-start justify-center flex-col gap-[28px]">
+            <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-[3px] bg-[#71C3FD]">
+              <img src={Icon} alt="icon" />
+            </div>
+            <div className="flex items-start justify-center flex-col w-[274px]">
+              <p className="text-[#333] text-[18px] font-[400] leading-[100%] font-lato mb-[16px]">
+                Best Travel's Website
+              </p>
+              <p className="text-[#999999] text-[14px] font-[400] leading-[180%] font-lato ">
+                Travel agencies that provide round trip, one way, and multi trip
+                services.
+              </p>
+            </div>
+          </div>
+          <div className="w-[1px] h-[211px] bg-[#E4E4E7]"></div>
+          <div className="flex items-start justify-center flex-col gap-[28px]">
+            <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-[3px] bg-[#FA3636]">
+              <img src={Icon1} alt="icon" />
+            </div>
+            <div className="flex items-start justify-center flex-col w-[274px]">
+              <p className="text-[#333] text-[18px] font-[400] leading-[100%] font-lato mb-[16px]">
+                Competitive Price
+              </p>
+              <p className="text-[#999999] text-[14px] font-[400] leading-[180%] font-lato ">
+                The price offered are affordable starting from the ordinary to
+                the exclusive.
+              </p>
+            </div>
+          </div>
+          <div className="w-[1px] h-[211px] bg-[#E4E4E7]"></div>
+          <div className="flex items-start justify-center flex-col gap-[28px]">
+            <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-[3px] bg-[#FC747B]">
+              <img src={Icon2} alt="icon" />
+            </div>
+            <div className="flex items-start justify-center flex-col w-[274px]">
+              <p className="text-[#333] text-[18px] font-[400] leading-[100%] font-lato mb-[16px]">
+                Global Coverage
+              </p>
+              <p className="text-[#999999] text-[14px] font-[400] leading-[180%] font-lato ">
+                There are many tourist attractions, hotels and interesting
+                entertainment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col items-center gap-[30px] p-[50px] mt-[50]">
+        <div className="flex flex-col justify-center items-center gap-7">
+          <span className="font-extrabold text-[48px] leading-[100%] text-center text-[#222] font-[lato]">
+            More From <span className="text-[#EF3A45]">CAMBODIA</span> .
+          </span>
+          <span className="font-normal text-[18px] leading-[180%] text-[#222] font-[lato]">
+            We ensure that you’ll embark on a perfectly planned, safe vacation
+            at a price you can afford.
+          </span>
+        </div>
+        <div className="w-[1259px] h-[429px]">
+          <div className="flex justify-center items-center gap-8">
+            <img
+              className="w-80 h-[220px] object-cover"
+              src={ImgVideo1}
+              alt="ImgVideo"
+            ></img>
+            <img
+              className="w-[555px] h-[355px] object-cover"
+              src={ImgVideo2}
+              alt="ImgVideo"
+            ></img>
+            <img
+              className="w-80 h-[220px] object-cover"
+              src={ImgVideo3}
+              alt="ImgVideo"
+            ></img>
+          </div>
+        </div>
+        <div className="flex justify-center items-center gap-4">
+          <svg className="w-[40px] h-1 rounded-2xl bg-[#EF3A45]"></svg>
+          <svg className="w-[24px] h-1 bg-[#666] rounded-2xl"></svg>
+          <svg className="w-[24px] h-1  bg-[#666] rounded-2xl"></svg>
         </div>
       </div>
     </>
