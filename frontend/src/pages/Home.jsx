@@ -19,25 +19,36 @@ function Home() {
   const [activeCategory, setActiveCategory] = useState("Cultural");
   const navigate = useNavigate();
 
+  const initialImagesWithIndices = [
+    { src: ImgVideo1, originalIndex: 0 },
+    { src: ImgVideo2, originalIndex: 1 },
+    { src: ImgVideo3, originalIndex: 2 },
+  ];
+
+  const [displayedImages, setDisplayedImages] = useState(
+    initialImagesWithIndices
+  );
+
+  const activeCarouselIndex = 1;
+
+  const [currentOriginalIndex, setCurrentOriginalIndex] = useState(1);
+
   useEffect(() => {
     if (auth.isLoggedIn) {
       navigate("/explore");
     }
   }, []);
 
-  const ImageSlider = () => {
-    const images = [ImgVideo1, ImgVideo2, ImgVideo3];
+  const handleImageClick = (clickedVisualIndex) => {
+    const newImages = [...displayedImages];
+    const clickedImage = newImages[clickedVisualIndex];
 
-    // Initial center is index 1
-    const [order, setOrder] = useState([0, 1, 2]);
-
-    const handleImageClick = (index) => {
-      if (index === 1) return; // already center
-      const newOrder = [...order];
-      // Swap clicked image with center (index 1)
-      [newOrder[1], newOrder[index]] = [newOrder[index], newOrder[1]];
-      setOrder(newOrder);
-    };
+    if (clickedVisualIndex !== activeCarouselIndex) {
+      newImages.splice(clickedVisualIndex, 1);
+      newImages.splice(activeCarouselIndex, 0, clickedImage);
+      setDisplayedImages(newImages);
+    }
+    setCurrentOriginalIndex(clickedImage.originalIndex);
   };
 
   return (
@@ -89,7 +100,7 @@ function Home() {
             </div>
           </div>
 
-          <div className="w-[566px]  flex flex-col justify-between items-start h-[611px]">
+          <div className="w-[566px] flex flex-col justify-between items-start h-[611px]">
             <p className="text-[64px] font-[700] font-lato">About Us</p>
             <p className="text-[var(--text-color,#505050)] font-lato text-[16px] font-[450] leading-[29px] w-[600px] h-[174px]">
               We specialize in developing high-quality web applications, booking
@@ -243,7 +254,7 @@ function Home() {
           />
           <HighlightCrad
             bgImg={
-              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
+              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5nZXJwZW5n/LWluY3J5cHRlZC1m/b3Jtcy9mYW50YXN5/L3BuZy1pbWFnZXMv/MjAyMC82LzIxL3Bu/Z3RyZWUtc3RvY2st/bGFyZ2UtaW1hZ2UtdmFyaWFibGUuanBn"
             }
             text={
               <>
@@ -253,7 +264,7 @@ function Home() {
           />
           <HighlightCrad
             bgImg={
-              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
+              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5nZXJwZW5n/LWluY3J5cHRlZC1m/b3Jtcy9mYW50YXN5/L3BuZy1pbWFnZXMv/MjAyMC82LzIxL3Bu/Z3RyZWUtc3RvY2stbGFyZ2UtaW1hZ2UtdmFyaWFibGUuanBn"
             }
             text={
               <>
@@ -274,7 +285,7 @@ function Home() {
         </div>
 
         <div className="hidden md:flex mt-4">
-          <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-white text-red-500 border-[1.5px] border-red-500 rounded-lg  text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
+          <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-white text-red-500 border-[1.5px] border-red-500 rounded-lg text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
             <span className="font-[600] transition-all duration-300 group-hover:text-white">
               View All
             </span>
@@ -284,7 +295,7 @@ function Home() {
       </div>
 
       <div className="flex items-center justify-center mt-[60px] py-[50px] px-[20px]">
-        <div className="flex items-start justify-center flex-col gap-[32px] w-[384px]  mr-[60px]">
+        <div className="flex items-start justify-center flex-col gap-[32px] w-[384px] mr-[60px]">
           <p className="text-[#222] font-poppins text-[48px] not-italic font-extrabold leading-[100%]">
             Why <span className=" text-[#FA3636]">Choose</span> Us
           </p>
@@ -293,7 +304,7 @@ function Home() {
             at a price you can afford.
           </p>
           <div className="hidden md:flex mt-4">
-            <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-white text-red-500 border-[1.5px] border-red-500 rounded-lg  text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
+            <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-white text-red-500 border-[1.5px] border-red-500 rounded-lg text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
               <span className="font-[600] transition-all duration-300 group-hover:text-white">
                 Contact US
               </span>
@@ -348,39 +359,46 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center gap-[30px] p-[50px] mt-[50]">
+      <div className="flex flex-col items-center gap-[30px] p-[50px] mt-[50px]">
         <div className="flex flex-col justify-center items-center gap-7">
           <span className="font-extrabold text-[48px] leading-[100%] text-center text-[#222] font-[lato]">
-            More From <span className="text-[#EF3A45]">CAMBODIA</span> .
+            More From <span className="text-[#EF3A45]">CAMBODIA</span>.
           </span>
           <span className="font-normal text-[18px] leading-[180%] text-[#222] font-[lato]">
             We ensure that you’ll embark on a perfectly planned, safe vacation
             at a price you can afford.
           </span>
         </div>
+
         <div className="w-[1259px] h-[429px]">
           <div className="flex justify-center items-center gap-8">
-            <img
-              className="w-80 h-[220px] object-cover"
-              src={ImgVideo1}
-              alt="ImgVideo"
-            ></img>
-            <img
-              className="w-[555px] h-[355px] object-cover"
-              src={ImgVideo2}
-              alt="ImgVideo"
-            ></img>
-            <img
-              className="w-80 h-[220px] object-cover"
-              src={ImgVideo3}
-              alt="ImgVideo"
-            ></img>
+            {displayedImages.map((imageObj, index) => (
+              <img
+                key={imageObj.originalIndex}
+                onClick={() => handleImageClick(index)}
+                src={imageObj.src}
+                alt={`ImgVideo${imageObj.originalIndex}`}
+                className={`cursor-pointer object-cover transition-all duration-300 ${
+                  index === activeCarouselIndex
+                    ? "w-[555px] h-[355px]"
+                    : "w-80 h-[220px]"
+                }`}
+              />
+            ))}
           </div>
         </div>
+
         <div className="flex justify-center items-center gap-4">
-          <svg className="w-[40px] h-1 rounded-2xl bg-[#EF3A45]"></svg>
-          <svg className="w-[24px] h-1 bg-[#666] rounded-2xl"></svg>
-          <svg className="w-[24px] h-1  bg-[#666] rounded-2xl"></svg>
+          {initialImagesWithIndices.map((_, index) => (
+            <svg
+              key={index}
+              className={`h-1 rounded-2xl transition-all duration-300 ${
+                index === currentOriginalIndex
+                  ? "w-[40px] bg-[#EF3A45]"
+                  : "w-[24px] bg-[#666]"
+              }`}
+            ></svg>
+          ))}
         </div>
       </div>
     </>
