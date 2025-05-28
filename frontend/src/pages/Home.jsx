@@ -15,18 +15,265 @@ import ImgVideo2 from "../assets/images/img_video2.svg";
 import ImgVideo3 from "../assets/images/img_video3.svg";
 import HighlightCrad from "../components/cards/HighlightCrad";
 
+// Define a data structure to hold images for each category (for the carousel, as in previous solution)
+const categoryImages = {
+  Cultural: [
+    { src: ImgVideo1, originalIndex: 0 },
+    { src: ImgVideo2, originalIndex: 1 },
+    { src: ImgVideo3, originalIndex: 2 },
+  ],
+  Popular: [
+    { src: ImgVideo2, originalIndex: 1 },
+    { src: ImgVideo3, originalIndex: 2 },
+    { src: ImgVideo1, originalIndex: 0 },
+  ],
+  Recommended: [
+    { src: ImgVideo3, originalIndex: 2 },
+    { src: ImgVideo1, originalIndex: 0 },
+    { src: ImgVideo2, originalIndex: 1 },
+  ],
+  Festivals: [
+    { src: ImgVideo1, originalIndex: 0 },
+    { src: ImgVideo3, originalIndex: 2 },
+    { src: ImgVideo2, originalIndex: 1 },
+  ],
+};
+
+// NEW: Data structure for Highlight Cards based on categories
+const highlightCardsData = {
+  Cultural: [
+    {
+      bgImg:
+        "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc",
+      text: (
+        <>
+          Explore our World's Largest <br /> Religion Monument
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc",
+      text: (
+        <>
+          Explore our Angkor <br /> National Park
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc",
+      text: (
+        <>
+          Explore our Rich's <br /> Cultural Khmer Art
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc",
+      text: (
+        <>
+          Explore our Wonderful <br /> Capital of Cambodia
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc",
+      text: (
+        <>
+          Explore our genocide <br /> Museum Toul Sleng
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc",
+      text: (
+        <>
+          Explore our Bayon <br /> Religions Temple
+        </>
+      ),
+    },
+  ],
+  Popular: [
+    {
+      bgImg:
+        "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc",
+      text: (
+        <>
+          Discover the Vibrant <br /> Markets of Phnom Penh
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/koh-rong-island-cambodia_335224-220.jpg?t=st=1716827278~exp=1716830878~hmac=c6d17e5a07c4587d1976241a4a42b104996f0144f800726715f3333331b26802&w=1380",
+      text: (
+        <>
+          Relax on the Stunning <br /> Beaches of Koh Rong
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/preah-khan-temple-angkor-cambodia_335224-221.jpg?t=st=1716827303~exp=1716830903~hmac=862413e6189914757c30700593740e6983794b150992383c8869c36c6418efda&w=1380",
+      text: (
+        <>
+          Explore the Hidden <br /> Gems of Preah Khan
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/cambodian-traditional-boat-mekong-river_335224-222.jpg?t=st=1716827324~exp=1716830924~hmac=e20980590a2a4b8f5223c72b21cf56b850d249f05a968600d80d2417c67554f7&w=1380",
+      text: (
+        <>
+          Cruise Along the Majestic <br /> Mekong River
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/national-museum-cambodia_335224-223.jpg?t=st=1716827344~exp=1716830944~hmac=09520442345e656d05f560e90c681284a1426361a38a7c29e46a782a201c1374&w=1380",
+      text: (
+        <>
+          Visit the National <br /> Museum in Phnom Penh
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/silver-pagoda-royal-palace-phnom-penh_335224-224.jpg?t=st=1716827364~exp=1716830964~hmac=d927a7c92b23a76e936c56839352e85a5a73e6f777c5b9679f2257f8928373b8&w=1380",
+      text: (
+        <>
+          Marvel at the Silver Pagoda <br /> within the Royal Palace
+        </>
+      ),
+    },
+  ],
+  Recommended: [
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/bokor-hill-station-cambodia_335224-225.jpg?t=st=1716827409~exp=1716831009~hmac=40f8080f08a55427d140e74f177c92476d1e43e2f9d506691456576b50e39660&w=1380",
+      text: (
+        <>
+          Explore the Eerie Beauty <br /> of Bokor Hill Station
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/kratie-mekong-river-cambodia_335224-226.jpg?t=st=1716827435~exp=1716831035~hmac=b375b4f65355a297924376c8e3bb2a05d898495efc5d14041b655512d718b5b7&w=1380",
+      text: (
+        <>
+          Spot Rare Irrawaddy Dolphins <br /> in Kratie
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/cambodian-pepper-plantation_335224-227.jpg?t=st=1716827457~exp=1716831057~hmac=80a373b98c92a64c48324e9334dd163c457313a233b8277259275f10a7b458d9&w=1380",
+      text: (
+        <>
+          Tour a Pepper Plantation <br /> in Kampot
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/cambodian-cooking-class_335224-228.jpg?t=st=1716827479~exp=1716831079~hmac=d240d437149a712f5a65239a0397736e65a6f236e788771192e43f55097f3747&w=1380",
+      text: (
+        <>
+          Take a Cambodian Cooking <br /> Class
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/phnom-kulen-national-park_335224-229.jpg?t=st=1716827500~exp=1716831100~hmac=c39174df44a7f96b2700344585145c2f8216124017d7f722904c62f3d5377038&w=1380",
+      text: (
+        <>
+          Hike in Phnom Kulen <br /> National Park
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/cambodian-traditional-dance_335224-230.jpg?t=st=1716827521~exp=1716831121~hmac=a4031d227b686e00b659c235790a8806297314644548777128cf7e85746b5d2e&w=1380",
+      text: (
+        <>
+          Enjoy a Traditional <br /> Apsara Dance Show
+        </>
+      ),
+    },
+  ],
+  Festivals: [
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/water-festival-cambodia_335224-231.jpg?t=st=1716827542~exp=1716831142~hmac=2c0a4e7681c1c964177c4e5a91176b6238b695191c9f4d7f516a506720f4b360&w=1380",
+      text: (
+        <>
+          Experience the Bon Om Touk <br /> Water Festival
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/khmer-new-year-celebration_335224-232.jpg?t=st=1716827566~exp=1716831166~hmac=332152065842c38865c36531405c14d9b4b036814b14d232a2656d09101d24c0&w=1380",
+      text: (
+        <>
+          Celebrate Khmer <br /> New Year
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/royal-ploughing-ceremony-cambodia_335224-233.jpg?t=st=1716827588~exp=1716831188~hmac=50e206e987c603a19e48f76e3381a1a5b828a2a5d21a2245b7367d8f991f868c&w=1380",
+      text: (
+        <>
+          Witness the Royal <br /> Ploughing Ceremony
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/ancestor-festival-cambodia_335224-234.jpg?t=st=1716827610~exp=1716831210~hmac=e2c14041d528b8559092419a4b868e82a60d0061e3895e6308a3d467885b51c8&w=1380",
+      text: (
+        <>
+          Participate in Pchum Ben <br /> Ancestor's Festival
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/boat-race-water-festival_335224-235.jpg?t=st=1716827628~exp=1716831228~hmac=2e49c9510166d79044238e8749e75c5e8c14e1f7f6a7d76a746533036a143526&w=1380",
+      text: (
+        <>
+          Enjoy the Excitement of <br /> Boat Races
+        </>
+      ),
+    },
+    {
+      bgImg:
+        "https://img.freepik.com/free-photo/cambodian-lantern-festival_335224-236.jpg?t=st=1716827649~exp=1716831249~hmac=025d57d762f0f46f3438a08c7c9803126f59c256d029589d89304a2d815774a3&w=1380",
+      text: (
+        <>
+          Celebrate the Lantern <br /> Festival
+        </>
+      ),
+    },
+  ],
+};
+
 function Home() {
   const [activeCategory, setActiveCategory] = useState("Cultural");
   const navigate = useNavigate();
 
-  const initialImagesWithIndices = [
-    { src: ImgVideo1, originalIndex: 0 },
-    { src: ImgVideo2, originalIndex: 1 },
-    { src: ImgVideo3, originalIndex: 2 },
-  ];
-
+  // Use categoryImages to set initial and updated images for the carousel
   const [displayedImages, setDisplayedImages] = useState(
-    initialImagesWithIndices
+    categoryImages["Cultural"]
   );
 
   const activeCarouselIndex = 1;
@@ -49,6 +296,14 @@ function Home() {
       setDisplayedImages(newImages);
     }
     setCurrentOriginalIndex(clickedImage.originalIndex);
+  };
+
+  // Update displayed images and highlight cards when the category changes
+  const handleCategoryChange = (category) => {
+    setActiveCategory(category);
+    // Update for Carousel (from previous solution)
+    setDisplayedImages(categoryImages[category]);
+    setCurrentOriginalIndex(1); // Reset to the middle image for carousel
   };
 
   return (
@@ -159,7 +414,7 @@ function Home() {
             <li>
               <Link
                 to="#"
-                onClick={() => setActiveCategory("Cultural")}
+                onClick={() => handleCategoryChange("Cultural")}
                 className={`font-lato text-[20px] ${
                   activeCategory === "Cultural"
                     ? "text-[#EF3A45] after:flex after:w-[40px] after:mt-1 after:h-[2px] after:bg-[#EF3A45] after:ml-14 rounded-[40px] font-lato font-[500] "
@@ -175,7 +430,7 @@ function Home() {
             <li>
               <Link
                 to="#"
-                onClick={() => setActiveCategory("Popular")}
+                onClick={() => handleCategoryChange("Popular")}
                 className={`font-lato text-[20px] ${
                   activeCategory === "Popular"
                     ? "text-[#EF3A45] after:flex after:w-[40px] after:mt-1 after:h-[2px] after:bg-[#EF3A45] after:ml-14 rounded-[40px] font-lato font-[500] "
@@ -191,7 +446,7 @@ function Home() {
             <li>
               <Link
                 to="#"
-                onClick={() => setActiveCategory("Recommended")}
+                onClick={() => handleCategoryChange("Recommended")}
                 className={`font-lato text-[20px] ${
                   activeCategory === "Recommended"
                     ? "text-[#EF3A45] after:flex after:w-[75px] after:mt-1 after:h-[2px] after:bg-[#EF3A45] after:ml-9.5 rounded-[40px] font-lato font-[500] "
@@ -207,7 +462,7 @@ function Home() {
             <li>
               <Link
                 to="#"
-                onClick={() => setActiveCategory("Festivals")}
+                onClick={() => handleCategoryChange("Festivals")}
                 className={`font-lato text-[20px] ${
                   activeCategory === "Festivals"
                     ? "text-[#EF3A45] after:flex after:w-[50px] after:mt-1 after:h-[2px] after:bg-[#EF3A45] after:ml-12.5 rounded-[40px] font-lato font-[500] "
@@ -220,68 +475,16 @@ function Home() {
           </div>
         </ul>
 
+        {/* Highlight Cards Section */}
         <div className="flex flex-wrap items-center content-center gap-[25px] w-[1440px] px-[5px] pl-[10px]">
-          <HighlightCrad
-            bgImg={
-              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
-            }
-            text={
-              <>
-                Explore our World's Largest <br /> Religion Monument
-              </>
-            }
-          />
-          <HighlightCrad
-            bgImg={
-              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
-            }
-            text={
-              <>
-                Explore our Angkor <br /> National Park
-              </>
-            }
-          />
-          <HighlightCrad
-            bgImg={
-              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
-            }
-            text={
-              <>
-                Explore our Rich's <br />
-                Cultural Khmer Art
-              </>
-            }
-          />
-          <HighlightCrad
-            bgImg={
-              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
-            }
-            text={
-              <>
-                Explore our Wonderful <br /> Capital of Cambodia
-              </>
-            }
-          />
-          <HighlightCrad
-            bgImg={
-              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
-            }
-            text={
-              <>
-                Explore our genocide <br /> Museum Toul Sleng
-              </>
-            }
-          />
-          <HighlightCrad
-            bgImg={
-              "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc"
-            }
-            text={
-              <>
-                Explore our Bayon <br /> Religions Temple
-              </>
-            }
-          />
+          {/* Dynamically render HighlightCrad components based on activeCategory */}
+          {highlightCardsData[activeCategory].map((card, index) => (
+            <HighlightCrad
+              key={index} // It's good practice to provide a key
+              bgImg={card.bgImg}
+              text={card.text}
+            />
+          ))}
         </div>
 
         <div className="hidden md:flex mt-4">
@@ -389,7 +592,7 @@ function Home() {
         </div>
 
         <div className="flex justify-center items-center gap-4">
-          {initialImagesWithIndices.map((_, index) => (
+          {displayedImages.map((_, index) => (
             <svg
               key={index}
               className={`h-1 rounded-2xl transition-all duration-300 ${
