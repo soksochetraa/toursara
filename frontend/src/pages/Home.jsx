@@ -5,7 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../Auth";
 import { useEffect } from "react";
 import React, { useState } from "react";
-import { Facebook, Instagram, Youtube } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Youtube,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react"; // Import Chevrons
 import Fram from "../assets/images/fram-imag.svg";
 import Icon from "../assets/images/icon.svg";
 import Icon1 from "../assets/images/icon_money.svg";
@@ -14,6 +20,18 @@ import ImgVideo1 from "../assets/images/img_video1.svg";
 import ImgVideo2 from "../assets/images/img_video2.svg";
 import ImgVideo3 from "../assets/images/img_video3.svg";
 import HighlightCrad from "../components/cards/HighlightCrad";
+import SreyMeii from "../assets/images/Srey_Meii.svg"; // Placeholder - replace with actual images
+import SreyRoth from "../assets/images/Srey_Roth.svg"; // Placeholder
+import SreyKa from "../assets/images/Srey_Ka.svg"; // Placeholder
+import SreyKhouch from "../assets/images/Srey_Khouch.svg"; // Placeholder
+import Kanhna from "../assets/images/Kanhna.svg"; // Placeholder - replace with actual images
+import Lin from "../assets/images/Lin.svg"; // Placeholder - replace with actual images
+import linda from "../assets/images/Linda.svg"; // Placeholder - replace with actual images
+import Ly from "../assets/images/Ly.svg"; // Placeholder - replace with actual images
+import Seav_ling from "../assets/images/Seav_ling.svg"; // Placeholder - replace with actual images
+import Teav from "../assets/images/Teav.svg"; // Placeholder - replace with actual images
+import Bopha from "../assets/images/Bopha.svg"; // Placeholder - replace with actual images
+import Chanthy from "../assets/images/Chanthy.svg"; // Placeholder - replace with actual images
 
 // Define a data structure to hold images for each category (for the carousel, as in previous solution)
 const categoryImages = {
@@ -267,18 +285,141 @@ const highlightCardsData = {
   ],
 };
 
+// Testimonial Data
+const testimonials = [
+  {
+    name: "Srey Meii",
+    text: "Wow, what a fun vacation with Oelinken, guided by professional people",
+    rating: 5,
+    img: SreyMeii,
+  },
+  {
+    name: "Srey Roth",
+    text: "It’s an amazing experience to be able to vacation to a new place, thank you Oelinken",
+    rating: 4,
+    img: SreyRoth,
+  },
+  {
+    name: "Srey Ka",
+    text: "At first I was lazy but that thought disappeared after being accompanied by a pleasant guide",
+    rating: 4,
+    img: SreyKa,
+  },
+  {
+    name: "Srey Khouch",
+    text: "New story in my life, really amazing and also affordable",
+    rating: 5,
+    img: SreyKhouch,
+  },
+
+  {
+    name: "Kanhna",
+    text: "At first I was lazy but that thought disappeared after being accompanied by a pleasant guide",
+    rating: 5,
+    img: Kanhna,
+  },
+  {
+    name: "Lin",
+    text: "Wow, what a fun vacation with Oelinken, guided by professional people",
+    rating: 5,
+    img: Lin,
+  },
+  {
+    name: "Linda",
+    text: "New story in my life, really amazing and also affordable",
+    rating: 5,
+    img: linda,
+  },
+  {
+    name: "Ly",
+    text: "Wow, what a fun vacation with Oelinken, guided by professional people",
+    rating: 5,
+    img: Ly,
+  },
+  {
+    name: "Seav Ling",
+    text: "At first I was lazy but that thought disappeared after being accompanied by a pleasant guide",
+    rating: 5,
+    img: Seav_ling,
+  },
+  {
+    name: "Teav",
+    text: "Wow, what a fun vacation with Oelinken, guided by professional people",
+    rating: 5,
+    img: Teav,
+  },
+  {
+    name: "Bopha",
+    text: "New story in my life, really amazingand also affordable",
+    rating: 5,
+    img: Bopha,
+  },
+  {
+    name: "Chanthy",
+    text: "New story in my life, really amazing and also affordable",
+    rating: 5,
+    img: Chanthy,
+  },
+];
+
+// Star Rating Component
+const StarRating = ({ rating }) => {
+  const stars = [];
+  for (let i = 0; i < 5; i++) {
+    stars.push(
+      <svg
+        key={i}
+        className={`w-[15px] h-[15px] ${
+          i < rating ? "text-[#FFA41C]" : "text-[#C4C4C4]"
+        }`}
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.91l6.561-.955L10 1l2.95 5.955 6.561.955-4.756 3.635 1.123 6.545z" />
+      </svg>
+    );
+  }
+  return <div className="flex gap-[5px]">{stars}</div>;
+};
+
+// Testimonial Card Component
+const TestimonialCard = ({ name, text, rating, imgSrc }) => (
+  <div className="w-[312px] h-[197px] bg-white  p-6 flex flex-col justify-between items-start shrink-0">
+    <p className="text-[#12121299] w-[216px] h-[75px] text-[14px] font-[lato] ml-[6px] mb-4 leading-[180%] ">
+      {text}
+    </p>
+    <div className="flex items-center w-full ">
+      <img
+        src={imgSrc}
+        alt={name}
+        className="w-[48px] h-[48px] rounded-full mr-[17px]"
+      />
+      <div className="flex items-start flex-col gap-[5px]">
+        <span className="font-[lato] text-[16px] text-[#222222]">{name}</span>
+        <StarRating rating={rating} />
+      </div>
+    </div>
+  </div>
+);
+
 function Home() {
   const [activeCategory, setActiveCategory] = useState("Cultural");
   const navigate = useNavigate();
-
-  // Use categoryImages to set initial and updated images for the carousel
   const [displayedImages, setDisplayedImages] = useState(
     categoryImages["Cultural"]
   );
-
   const activeCarouselIndex = 1;
-
   const [currentOriginalIndex, setCurrentOriginalIndex] = useState(1);
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0); // For testimonial carousel
+
+  const testimonialsPerPage = 4;
+  const cardWidth = 312; // Width of one card
+  const gap = 20; // Gap between cards
+  const slideWidth =
+    cardWidth * testimonialsPerPage + gap * (testimonialsPerPage - 1); // Total width of one page/slide
+  const totalTestimonialSlides = Math.ceil(
+    testimonials.length / testimonialsPerPage
+  );
 
   useEffect(() => {
     if (auth.isLoggedIn) {
@@ -298,12 +439,23 @@ function Home() {
     setCurrentOriginalIndex(clickedImage.originalIndex);
   };
 
-  // Update displayed images and highlight cards when the category changes
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
-    // Update for Carousel (from previous solution)
     setDisplayedImages(categoryImages[category]);
-    setCurrentOriginalIndex(1); // Reset to the middle image for carousel
+    setCurrentOriginalIndex(1);
+  };
+
+  // Testimonial Carousel Handlers
+  const handleNextTestimonial = () => {
+    setCurrentTestimonialIndex((prevIndex) =>
+      prevIndex === totalTestimonialSlides - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handlePrevTestimonial = () => {
+    setCurrentTestimonialIndex((prevIndex) =>
+      prevIndex === 0 ? totalTestimonialSlides - 1 : prevIndex - 1
+    );
   };
 
   return (
@@ -330,7 +482,7 @@ function Home() {
           </div>
         </div>
         <div className="w-[1420px] flex flex-col justify-center items-center gap-2.5 px-[30px] relative">
-          <YouTubePlayer videoSrc="https://youtu.be/KsDGDzwuQ-I?si=BqA3JvDqKWvdrnQX" />
+          <YouTubePlayer videoSrc="https://youtu.be/KsDGDzwuQ-I?si=hqHpW57AejD4mXBZ" />
           <div className=" absolute top-[50%] right-[0px] transform -translate-y-1/2 flex flex-col items-center justify-around gap-3.5">
             <h1 className="h-[270px]text-start font-bold text-[24px] text-[#fa3636] rotate-90 mb-[48px] ">
               FOLLOW US
@@ -600,6 +752,101 @@ function Home() {
                   ? "w-[40px] bg-[#EF3A45]"
                   : "w-[24px] bg-[#666]"
               }`}
+            ></svg>
+          ))}
+        </div>
+      </div>
+
+      {/* Testimonial Section Updated for Sliding */}
+      <div className="flex item-center justify-center flex-col w-full h-auto bg-[#0000001A] py-[60px] px-5 mb-[10px] ">
+        <div className="flex justify-center h-auto w-full relative mb-[45px]">
+          <p className="text-[#FA3636] text-[80px] font-[lato] absolute left-[38px] top-[209px]">
+            “
+          </p>
+          <div className="flex items-center justify-center flex-col gap-[24px] ">
+            <p className=" text-[#222] text-[56px] font-[lato] text-center font-[400] leading-[130%] w-[658px] h-auto">
+              Contact us to review <br />
+              <span className="text-[#FA3636]">your experience</span> with us
+            </p>
+            <p className=" text-[#666] text-[18px] font-[lato] text-center font-[400] leading-[180%] w-[440px] h-auto">
+              Give us feedback and let us know what experiences you had while on
+              vacation with us
+            </p>
+          </div>
+        </div>
+
+        {/* --- Start Sliding Carousel --- */}
+        <div className="flex items-center justify-center w-full relative px-[50px]">
+          {" "}
+          {/* Add padding for buttons */}
+          {/* Prev Button */}
+          <button
+            onClick={handlePrevTestimonial}
+            className={`absolute left-[50px] top-1/2 transform -translate-y-1/2 bg-white rounded-[10%] p-2 shadow-md hover:bg-gray-100 z-20 ${
+              currentTestimonialIndex === 0
+                ? "opacity-50 cursor-not-allowed"
+                : ""
+            }`}
+            disabled={currentTestimonialIndex === 0}
+          >
+            <ChevronLeft className="text-[#EF3A45]" />
+          </button>
+          {/* Container with overflow hidden */}
+          <div className="overflow-hidden" style={{ width: `${slideWidth}px` }}>
+            {/* Track with transform and transition */}
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{
+                transform: `translateX(-${
+                  currentTestimonialIndex * (slideWidth + gap)
+                }px)`,
+              }} // Adjust translate for gap
+            >
+              {/* Render ALL testimonials with gaps */}
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="shrink-0"
+                  style={{
+                    width: `${cardWidth}px`,
+                    marginRight: `${gap}px`,
+                  }}
+                >
+                  <TestimonialCard
+                    name={testimonial.name}
+                    text={testimonial.text}
+                    rating={testimonial.rating}
+                    imgSrc={testimonial.img}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Next Button */}
+          <button
+            onClick={handleNextTestimonial}
+            className={`absolute right-[50px] top-1/2 transform -translate-y-1/2 bg-[#EF3A45] rounded-[10%]  p-2 shadow-md hover:bg-red-700 z-20 ${
+              currentTestimonialIndex === totalTestimonialSlides - 1
+                ? "opacity-50 cursor-not-allowed"
+                : ""
+            }`}
+            disabled={currentTestimonialIndex === totalTestimonialSlides - 1}
+          >
+            <ChevronRight className="text-white" />
+          </button>
+        </div>
+        {/* --- End Sliding Carousel --- */}
+
+        <div className="flex justify-center items-center gap-4 mt-8">
+          {Array.from({ length: totalTestimonialSlides }).map((_, index) => (
+            <svg
+              key={index}
+              className={`h-[2px] rounded-full cursor-pointer transition-all duration-300 ${
+                index === currentTestimonialIndex
+                  ? "w-[40px] bg-[#EF3A45]"
+                  : "w-[12px] bg-[#666]"
+              }`}
+              onClick={() => setCurrentTestimonialIndex(index)}
             ></svg>
           ))}
         </div>
