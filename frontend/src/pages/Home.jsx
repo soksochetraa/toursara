@@ -639,7 +639,7 @@ function Home() {
           ))}
         </div>
 
-        <div className="hidden md:flex mt-4">
+        <div className="hidden md:flex mt-[80px]">
           <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-white text-red-500 border-[1.5px] border-red-500 rounded-lg text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
             <span className="font-[600] transition-all duration-300 group-hover:text-white">
               View All
@@ -758,7 +758,7 @@ function Home() {
       </div>
 
       {/* Testimonial Section Updated for Sliding */}
-      <div className="flex item-center justify-center flex-col w-full h-auto bg-[#0000001A] py-[60px] px-5 mb-[10px] ">
+      <div className="flex item-center justify-center flex-col w-full h-auto bg-[#0000001A] py-[60px] px-5 mb-[50px] ">
         <div className="flex justify-center h-auto w-full relative mb-[45px]">
           <p className="text-[#FA3636] text-[80px] font-[lato] absolute left-[38px] top-[209px]">
             “
