@@ -640,11 +640,11 @@ function Home() {
         </div>
 
         <div className="hidden md:flex mt-[80px]">
-          <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-white text-red-500 border-[1.5px] border-red-500 rounded-lg text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
+          <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-white text-[#5A827E] border-[1.5px] border-[#5A827E] rounded-lg text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
             <span className="font-[600] transition-all duration-300 group-hover:text-white">
               View All
             </span>
-            <span className="absolute top-[100%] left-[100%] w-[300px] h-[150px] bg-red-500 rounded-full z-[-1] transition-all duration-300 group-hover:top-[-30px] group-hover:left-[-30px]"></span>
+            <span className="absolute top-[100%] left-[100%] w-[300px] h-[150px] bg-[#5A827E] rounded-full z-[-1] transition-all duration-300 group-hover:top-[-30px] group-hover:left-[-30px]"></span>
           </button>
         </div>
       </div>
@@ -782,14 +782,14 @@ function Home() {
           {/* Prev Button */}
           <button
             onClick={handlePrevTestimonial}
-            className={`absolute left-[50px] top-1/2 transform -translate-y-1/2 bg-white rounded-[10%] p-2 shadow-md hover:bg-gray-100 z-20 ${
+            className={`absolute left-[50px] top-1/2 transform -translate-y-1/2 bg-[#EF3A45] rounded-[10%] p-2 shadow-md hover:bg-red-700 z-20 ${
               currentTestimonialIndex === 0
                 ? "opacity-50 cursor-not-allowed"
                 : ""
             }`}
             disabled={currentTestimonialIndex === 0}
           >
-            <ChevronLeft className="text-[#EF3A45]" />
+            <ChevronLeft className=" text-white" />
           </button>
           {/* Container with overflow hidden */}
           <div className="overflow-hidden" style={{ width: `${slideWidth}px` }}>
