@@ -102,7 +102,7 @@ const HotelsContainer = ({
             onClick={() => handlePageChange(i)}
             className={`px-3 py-1 cursor-pointer rounded mx-1 ${
               i === currentPage
-                ? "bg-[#ef3a45] text-white"
+                ? "bg-[#58A6A0] text-white"
                 : "bg-gray-100 text-gray-700"
             }`}
           >
@@ -159,9 +159,9 @@ const HotelsContainer = ({
                   className={`flex flex-col items-center justify-center w-full h-[85px] px-2 py-2 rounded-lg border cursor-pointer transition
                 ${
                   selectedAmenity === amenity
-                    ? "bg-[#ef3a45] text-white border-[#ef3a45]"
+                    ? "bg-[#58A6A0] text-white border-[#58A6A0]"
                     : "bg-white text-gray-700 border-gray-300"
-                } hover:bg-[#ef3a45]/90 hover:text-white`}
+                } hover:bg-[#58A6A0]/90 hover:text-white`}
                 >
                   <span className="text-xl mb-1">🏨</span>
                   <span className="text-xs text-center">{amenity}</span>
@@ -177,7 +177,7 @@ const HotelsContainer = ({
           className={`absolute left-[-30px] top-1/2 -translate-y-1/2 z-10 w-[36px] h-[36px] rounded-full flex items-center justify-center text-white transition duration-300 ${
             startIndex === 0
               ? "bg-gray-300 cursor-not-allowed"
-              : "bg-[#ef3a45] hover:bg-[#d2303b] cursor-pointer"
+              : "bg-[#58A6A0] hover:bg-[#d2303b] cursor-pointer"
           }`}
         >
           <ChevronLeft size={20} />
@@ -189,7 +189,7 @@ const HotelsContainer = ({
           className={`absolute right-[-30px] top-1/2 -translate-y-1/2 z-10 w-[36px] h-[36px] rounded-full flex items-center justify-center text-white transition duration-300 ${
             startIndex >= maxStartIndex
               ? "bg-gray-300 cursor-not-allowed"
-              : "bg-[#ef3a45] hover:bg-[#d2303b] cursor-pointer"
+              : "bg-[#58A6A0] hover:bg-[#d2303b] cursor-pointer"
           }`}
         >
           <ChevronRight size={20} />
@@ -199,7 +199,7 @@ const HotelsContainer = ({
       <div className="mb-4">
         <button
           onClick={() => setSelectedAmenity("")}
-          className="cursor-pointer px-4 py-2 rounded-full border bg-[#ef3a45] text-white hover:bg-[#ef3a45]/90 transition"
+          className="cursor-pointer px-4 py-2 rounded-full border bg-[#58A6A0] text-white hover:bg-[#58A6A0]/90 transition"
         >
           Reset Filter
         </button>

@@ -88,7 +88,7 @@ const GoogleMapComponent = ({ activeDestination }) => {
                     window.location.href = "/hotel/detail";
                   }
                 }}
-                className="text-[#ef3a45] cursor-pointer font-medium text-sm hover:underline"
+                className="text-[#45807b] cursor-pointer font-medium text-sm hover:underline"
               >
                 See more.
               </button>

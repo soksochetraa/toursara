@@ -465,9 +465,9 @@ function Home() {
           <span className="font-bold text-[72px] font-[Lato] leading-[100px] text-start text-black">
             The Wonders of
             <br />
-            Cambodia, <span className="text-[#ef3a45]">Go </span>
+            Cambodia, <span className="text-[#58A6A0]">Go </span>
             <br />
-            <span className="text-[#ef3a45]">Explore</span>
+            <span className="text-[#58A6A0]">Explore</span>
           </span>
           <div className="flex flex-col justify-between items-end self-stretch pb-[69px]">
             <p className="w-[488px] font-normal text-[18px] capitalize text-[#444444]">
@@ -484,13 +484,13 @@ function Home() {
         <div className="w-[1420px] flex flex-col justify-center items-center gap-2.5 px-[30px] relative">
           <YouTubePlayer videoSrc="https://youtu.be/KsDGDzwuQ-I?si=hqHpW57AejD4mXBZ" />
           <div className=" absolute top-[50%] right-[0px] transform -translate-y-1/2 flex flex-col items-center justify-around gap-3.5">
-            <h1 className="h-[270px]text-start font-bold text-[24px] text-[#fa3636] rotate-90 mb-[48px] ">
+            <h1 className="h-[270px]text-start font-bold text-[24px] text-[#58A6A0] rotate-90 mb-[48px] ">
               FOLLOW US
             </h1>
-            <span className="block h-[100px] bg-[#ef3a45] rounded-full w-[2px]"></span>
-            <Youtube color="#ef3a45" className="cursor-pointer" />
-            <Instagram color="#ef3a45" className="cursor-pointer" />
-            <Facebook color="#ef3a45" className="cursor-pointer" />
+            <span className="block h-[100px] bg-[#58A6A0] rounded-full w-[2px]"></span>
+            <Youtube color="#58A6A0" className="cursor-pointer" />
+            <Instagram color="#58A6A0" className="cursor-pointer" />
+            <Facebook color="#58A6A0" className="cursor-pointer" />
           </div>
         </div>
       </section>
@@ -518,8 +518,8 @@ function Home() {
               tourism experience across Cambodia.
             </p>
             <div className="hidden md:flex mt-4">
-              <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-red-500 text-white border-[1.5px] border-red-500 rounded-lg font-medium text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
-                <span className="font-bold transition-all duration-300 group-hover:text-red-600">
+              <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-[#58A6A0] text-white border-[1.5px] border-[#58A6A0] rounded-lg font-medium text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
+                <span className="font-bold transition-all duration-300 group-hover:text-[#45807b]">
                   SEE MORE
                 </span>
                 <span className="absolute top-[100%] left-[100%] w-[300px] h-[150px] bg-white rounded-full z-[-1] transition-all duration-300 group-hover:top-[-30px] group-hover:left-[-30px]"></span>
@@ -528,7 +528,7 @@ function Home() {
 
             <div className="w-[500px] h-[100px] flex items-center justify-between gap-[50px]">
               <div className="w-[136px] h-[100px] flex items-center justify-between flex-col">
-                <p className="text-[#EF3A45] text-[36px] font-normal leading-[100%]">
+                <p className="text-[#58A6A0] text-[36px] font-normal leading-[100%]">
                   200+
                 </p>
                 <p className="text-[#222] text-center text-[20px] font-normal leading-[140%] capitalize">
@@ -536,7 +536,7 @@ function Home() {
                 </p>
               </div>
               <div className="w-[136px] h-[100px] flex items-center justify-between flex-col">
-                <p className="text-[#EF3A45] text-[36px] font-normal leading-[100%]">
+                <p className="text-[#58A6A0] text-[36px] font-normal leading-[100%]">
                   500+
                 </p>
                 <p className="text-[#222] text-center text-[20px] font-normal leading-[140%] capitalize">
@@ -544,7 +544,7 @@ function Home() {
                 </p>
               </div>
               <div className="w-[136px] h-[100px] flex items-center justify-between flex-col">
-                <p className="text-[#EF3A45] text-[36px] font-normal leading-[100%]">
+                <p className="text-[#58A6A0] text-[36px] font-normal leading-[100%]">
                   1k+
                 </p>
                 <p className="text-[#222] text-center text-[20px] font-normal leading-[140%] capitalize">
@@ -558,7 +558,7 @@ function Home() {
 
       <div className="flex items-center justify-center flex-col mt-[60px]">
         <p className="text-[#222] font-poppins text-[56px] not-italic font-extrabold leading-[100%]">
-          The <span className="text-[#FA3636]">best place</span> for vacation
+          The <span className="text-[#58A6A0]">best place</span> for vacation
         </p>
 
         <ul className="w-auto h-auto flex justify-between items-center gap-[15px] mt-[63.5px] mb-11">
@@ -569,7 +569,7 @@ function Home() {
                 onClick={() => handleCategoryChange("Cultural")}
                 className={`font-lato text-[20px] ${
                   activeCategory === "Cultural"
-                    ? "text-[#EF3A45] after:flex after:w-[40px] after:mt-1 after:h-[2px] after:bg-[#EF3A45] after:ml-14 rounded-[40px] font-lato font-[500] "
+                    ? "text-[#58A6A0] after:flex after:w-[40px] after:mt-1 after:h-[2px] after:bg-[#58A6A0] after:ml-14 rounded-[40px] font-lato font-[500] "
                     : "text-[#222] font-[500] font-lato"
                 }`}
               >
@@ -585,7 +585,7 @@ function Home() {
                 onClick={() => handleCategoryChange("Popular")}
                 className={`font-lato text-[20px] ${
                   activeCategory === "Popular"
-                    ? "text-[#EF3A45] after:flex after:w-[40px] after:mt-1 after:h-[2px] after:bg-[#EF3A45] after:ml-14 rounded-[40px] font-lato font-[500] "
+                    ? "text-[#58A6A0] after:flex after:w-[40px] after:mt-1 after:h-[2px] after:bg-[#58A6A0] after:ml-14 rounded-[40px] font-lato font-[500] "
                     : "text-[#222] font-[500] font-lato"
                 }`}
               >
@@ -601,7 +601,7 @@ function Home() {
                 onClick={() => handleCategoryChange("Recommended")}
                 className={`font-lato text-[20px] ${
                   activeCategory === "Recommended"
-                    ? "text-[#EF3A45] after:flex after:w-[75px] after:mt-1 after:h-[2px] after:bg-[#EF3A45] after:ml-9.5 rounded-[40px] font-lato font-[500] "
+                    ? "text-[#58A6A0] after:flex after:w-[75px] after:mt-1 after:h-[2px] after:bg-[#58A6A0] after:ml-9.5 rounded-[40px] font-lato font-[500] "
                     : "text-[#222] font-[500] font-latol"
                 }`}
               >
@@ -617,7 +617,7 @@ function Home() {
                 onClick={() => handleCategoryChange("Festivals")}
                 className={`font-lato text-[20px] ${
                   activeCategory === "Festivals"
-                    ? "text-[#EF3A45] after:flex after:w-[50px] after:mt-1 after:h-[2px] after:bg-[#EF3A45] after:ml-12.5 rounded-[40px] font-lato font-[500] "
+                    ? "text-[#58A6A0] after:flex after:w-[50px] after:mt-1 after:h-[2px] after:bg-[#58A6A0] after:ml-12.5 rounded-[40px] font-lato font-[500] "
                     : "text-[#222] font-[500] font-lato"
                 }`}
               >
@@ -652,18 +652,18 @@ function Home() {
       <div className="flex items-center justify-center mt-[60px] py-[50px] px-[20px]">
         <div className="flex items-start justify-center flex-col gap-[32px] w-[384px] mr-[60px]">
           <p className="text-[#222] font-poppins text-[48px] not-italic font-extrabold leading-[100%]">
-            Why <span className=" text-[#FA3636]">Choose</span> Us
+            Why <span className=" text-[#58A6A0]">Choose</span> Us
           </p>
           <p className="w-[381px] h-auto text-[#222] text-[18px] font-normal font-lato">
             We ensure that you’ll embark on a perfectly planned, safe vacation
             at a price you can afford.
           </p>
           <div className="hidden md:flex mt-4">
-            <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-white text-red-500 border-[1.5px] border-red-500 rounded-lg text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
+            <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-white text-[#58A6A0] border-[1.5px] border-[#58A6A0] rounded-lg text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
               <span className="font-[600] transition-all duration-300 group-hover:text-white">
                 Contact US
               </span>
-              <span className="absolute top-[100%] left-[100%] w-[300px] h-[150px] bg-red-500 rounded-full z-[-1] transition-all duration-300 group-hover:top-[-30px] group-hover:left-[-30px]"></span>
+              <span className="absolute top-[100%] left-[100%] w-[300px] h-[150px] bg-[#58A6A0] rounded-full z-[-1] transition-all duration-300 group-hover:top-[-30px] group-hover:left-[-30px]"></span>
             </button>
           </div>
         </div>
@@ -684,7 +684,7 @@ function Home() {
           </div>
           <div className="w-[1px] h-[211px] bg-[#E4E4E7]"></div>
           <div className="flex items-start justify-center flex-col gap-[28px]">
-            <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-[3px] bg-[#FA3636]">
+            <div className=" flex items-center justify-center w-[60px] h-[60px] rounded-[3px] bg-[#58A6A0]">
               <img src={Icon1} alt="icon" />
             </div>
             <div className="flex items-start justify-center flex-col w-[274px]">
@@ -717,7 +717,7 @@ function Home() {
       <div className="flex flex-col items-center gap-[30px] p-[50px] mt-[50px]">
         <div className="flex flex-col justify-center items-center gap-7">
           <span className="font-extrabold text-[48px] leading-[100%] text-center text-[#222] font-[lato]">
-            More From <span className="text-[#EF3A45]">CAMBODIA</span>.
+            More From <span className="text-[#58A6A0]">CAMBODIA</span>.
           </span>
           <span className="font-normal text-[18px] leading-[180%] text-[#222] font-[lato]">
             We ensure that you’ll embark on a perfectly planned, safe vacation
@@ -749,7 +749,7 @@ function Home() {
               key={index}
               className={`h-1 rounded-2xl transition-all duration-300 ${
                 index === currentOriginalIndex
-                  ? "w-[40px] bg-[#EF3A45]"
+                  ? "w-[40px] bg-[#58A6A0]"
                   : "w-[24px] bg-[#666]"
               }`}
             ></svg>
@@ -760,13 +760,13 @@ function Home() {
       {/* Testimonial Section Updated for Sliding */}
       <div className="flex item-center justify-center flex-col w-full h-auto bg-[#0000001A] py-[60px] px-5 mb-[50px] ">
         <div className="flex justify-center h-auto w-full relative mb-[45px]">
-          <p className="text-[#FA3636] text-[80px] font-[lato] absolute left-[38px] top-[209px]">
+          <p className="text-[#58A6A0] text-[80px] font-[lato] absolute left-[38px] top-[209px]">
             “
           </p>
           <div className="flex items-center justify-center flex-col gap-[24px] ">
             <p className=" text-[#222] text-[56px] font-[lato] text-center font-[400] leading-[130%] w-[658px] h-auto">
               Contact us to review <br />
-              <span className="text-[#FA3636]">your experience</span> with us
+              <span className="text-[#58A6A0]">your experience</span> with us
             </p>
             <p className=" text-[#666] text-[18px] font-[lato] text-center font-[400] leading-[180%] w-[440px] h-auto">
               Give us feedback and let us know what experiences you had while on
@@ -782,7 +782,7 @@ function Home() {
           {/* Prev Button */}
           <button
             onClick={handlePrevTestimonial}
-            className={`absolute left-[50px] top-1/2 transform -translate-y-1/2 bg-[#EF3A45] rounded-[10%] p-2 shadow-md hover:bg-red-700 z-20 ${
+            className={`absolute left-[50px] top-1/2 transform -translate-y-1/2 bg-[#58A6A0] rounded-[10%] p-2 shadow-md hover:bg-red-700 z-20 ${
               currentTestimonialIndex === 0
                 ? "opacity-50 cursor-not-allowed"
                 : ""
@@ -825,7 +825,7 @@ function Home() {
           {/* Next Button */}
           <button
             onClick={handleNextTestimonial}
-            className={`absolute right-[50px] top-1/2 transform -translate-y-1/2 bg-[#EF3A45] rounded-[10%]  p-2 shadow-md hover:bg-red-700 z-20 ${
+            className={`absolute right-[50px] top-1/2 transform -translate-y-1/2 bg-[#58A6A0] rounded-[10%]  p-2 shadow-md hover:bg-red-700 z-20 ${
               currentTestimonialIndex === totalTestimonialSlides - 1
                 ? "opacity-50 cursor-not-allowed"
                 : ""
@@ -843,7 +843,7 @@ function Home() {
               key={index}
               className={`h-[2px] rounded-full cursor-pointer transition-all duration-300 ${
                 index === currentTestimonialIndex
-                  ? "w-[40px] bg-[#EF3A45]"
+                  ? "w-[40px] bg-[#58A6A0]"
                   : "w-[12px] bg-[#666]"
               }`}
               onClick={() => setCurrentTestimonialIndex(index)}

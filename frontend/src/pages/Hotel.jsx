@@ -26,7 +26,7 @@ function Hotel() {
         }}
       >
         <div className="flex flex-col items-center justify-center gap-2.5">
-          <h1 className="font-medium text-[70px] leading-[84px] text-center text-[#ef3a45]">
+          <h1 className="font-medium text-[70px] leading-[84px] text-center text-[#58A6A0]">
             Find Next Place To Visit
           </h1>
           <p className="font-normal text-[14px] text-center text-[#222222]">

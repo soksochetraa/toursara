@@ -71,7 +71,7 @@ const SmallMap = ({
                 href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#ef3a45] cursor-pointer font-medium text-sm hover:underline"
+                className="text-[#45807b] cursor-pointer font-medium text-sm hover:underline"
               >
                 View on Map
               </a>
@@ -84,10 +84,10 @@ const SmallMap = ({
             center={{ lat, lng }}
             radius={radius}
             options={{
-              strokeColor: "#EF3A45",
+              strokeColor: "#45807b",
               strokeOpacity: 0.8,
               strokeWeight: 2,
-              fillColor: "#EF3A4544",
+              fillColor: "#45807b44",
               fillOpacity: 0.35,
             }}
           />

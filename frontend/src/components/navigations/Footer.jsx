@@ -14,22 +14,22 @@ function Footer() {
               <br /> hidden gems, and inspire one another.
             </p>
             <div className="flex items-center gap-[15px]">
-              <Youtube color="#ef3a45" className="cursor-pointer" />
-              <Instagram color="#ef3a45" className="cursor-pointer" />
-              <Facebook color="#ef3a45" className="cursor-pointer" />
+              <Youtube color="#58A6A0" className="cursor-pointer" />
+              <Instagram color="#58A6A0" className="cursor-pointer" />
+              <Facebook color="#58A6A0" className="cursor-pointer" />
             </div>
           </div>
           <div className="flex gap-10">
             <div className="w-[150px] flex flex-col gap-3">
               <h4 className="font-bold text-base text-[#282828]">Toursara</h4>
               <ul className="flex flex-col gap-2.5">
-                <li className="font-normal text-[14px] text-[#3a3a3a] cursor-pointer hover:text-[#ef3a45]">
+                <li className="font-normal text-[14px] text-[#3a3a3a] cursor-pointer hover:text-[#58A6A0]">
                   Home
                 </li>
-                <li className="font-normal text-[14px] text-[#3a3a3a] cursor-pointer hover:text-[#ef3a45]">
+                <li className="font-normal text-[14px] text-[#3a3a3a] cursor-pointer hover:text-[#58A6A0]">
                   About Us
                 </li>
-                <li className="font-normal text-[14px] text-[#3a3a3a] cursor-pointer hover:text-[#ef3a45]">
+                <li className="font-normal text-[14px] text-[#3a3a3a] cursor-pointer hover:text-[#58A6A0]">
                   About Cambodia
                 </li>
               </ul>
@@ -38,13 +38,13 @@ function Footer() {
               <h4 className="font-bold text-base text-[#282828]">Contact</h4>
               <ul className="flex flex-col gap-2.5">
                 <li className="flex items-center gap-2">
-                  <Phone color="#ef3a45" />
+                  <Phone color="#58A6A0" />
                   <span className="font-normal text-[14px] text-[#3a3a3a] cursor-pointer">
                     +855 12 345 678
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <AtSign color="#ef3a45" />
+                  <AtSign color="#58A6A0" />
                   <span className="font-normal text-[14px] text-[#3a3a3a] cursor-pointer">
                     example@toursara.com
                   </span>

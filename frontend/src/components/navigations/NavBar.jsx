@@ -43,16 +43,16 @@ const NavBar = () => {
       <ul className="nav-links flex justify-around items-center w-[800px] h-[75px]">
         {links.map((link) => (
           <li
-            className="group relative font-[Lato] font-bold text-[16px] text-[#ef3a45]"
+            className="group relative font-[Lato] font-bold text-[16px] text-[#58A6A0]"
             key={link.label}
           >
             <NavLink
               to={link.path}
-              className="no-underline text-[#ef3a45] flex flex-col items-center transition-all duration-300"
+              className="no-underline text-[#58A6A0] flex flex-col items-center transition-all duration-300"
             >
               {link.label}
               <span
-                className={`block h-[2px] bg-[#ef3a45] mt-[1px] rounded-full transition-all duration-300 ${
+                className={`block h-[2px] bg-[#58A6A0] mt-[1px] rounded-full transition-all duration-300 ${
                   getActivePath(link.path)
                     ? "w-6 h-0.5 opacity-100"
                     : "w-0 h-0.5 opacity-0"

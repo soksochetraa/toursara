@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import SmallMap from "../components/cards/SmallMap";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {

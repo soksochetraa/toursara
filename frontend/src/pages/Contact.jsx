@@ -119,7 +119,7 @@ function Contact() {
             radius={800}
           />
         </div>
-        <div className="w-[419px] h-[900px] bg-[#ef3a45]"></div>
+        <div className="w-[419px] h-[900px] bg-[#58A6A0]"></div>
       </div>
     </section>
   );

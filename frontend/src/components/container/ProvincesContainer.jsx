@@ -71,7 +71,7 @@ function ProvincesContainer({ provinces, onProvinceClick }) {
           className={`absolute left-[-20px] top-1/2 -translate-y-1/2 w-[50px] h-[50px] rounded-full flex items-center justify-center text-white transition duration-300 ${
             startIndex === 0
               ? "bg-gray-300 cursor-not-allowed"
-              : "bg-[#ef3a45] hover:bg-[#d2303b] cursor-pointer"
+              : "bg-[#58A6A0] hover:bg-[#45807b] cursor-pointer"
           }`}
         >
           <ChevronLeft />
@@ -83,7 +83,7 @@ function ProvincesContainer({ provinces, onProvinceClick }) {
           className={`absolute right-[-20px] top-1/2 -translate-y-1/2 w-[50px] h-[50px] rounded-full flex items-center justify-center text-white transition duration-300 ${
             startIndex >= maxStartIndex
               ? "bg-gray-300 cursor-not-allowed"
-              : "bg-[#ef3a45] hover:bg-[#d2303b] cursor-pointer"
+              : "bg-[#58A6A0] hover:bg-[#45807b] cursor-pointer"
           }`}
         >
           <ChevronRight />

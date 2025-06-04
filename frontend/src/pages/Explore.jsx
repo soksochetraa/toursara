@@ -5,12 +5,14 @@ import ProvinceContainer from "../components/container/ProvincesContainer";
 import provinces from "../data/provinces";
 import DestinationsContainer from "../components/container/DestinationsContainer";
 import GoogleMapComponent from "../components/cards/GoogleMapComponent";
+import { useNavigate } from "react-router-dom";
 
 function Explore() {
   const [activeDestination, setActiveDestination] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedAmenity, setSelectedAmenity] = useState("");
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (location.state?.search) {
@@ -40,7 +42,7 @@ function Explore() {
         }}
       >
         <div className="flex flex-col items-center justify-center gap-2.5">
-          <h1 className="font-medium text-[70px] leading-[84px] text-center text-[#ef3a45]">
+          <h1 className="font-medium text-[70px] leading-[84px] text-center text-[#58A6A0]">
             Find Next Place To Visit
           </h1>
           <p className="font-normal text-[14px] text-center text-[#222222]">
@@ -80,12 +82,6 @@ function Explore() {
         <div
           id="search-section"
           className="w-full flex justify-center items-start gap-[18px] p-[30px]"
-          style={{
-            transform: "scale(0.75)",
-            transformOrigin: "top left",
-            width: "133.3333%",
-            height: "133.3333%",
-          }}
         >
           <div className="w-[840px] flex flex-col gap-4 px-10 pb-10">
             <div className="w-[760px] h-[48px] flex items-center gap-4 self-stretch bg-white pl-6 pr-1 py-1 rounded-full border border-solid border-gray-200">

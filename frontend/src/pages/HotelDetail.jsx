@@ -114,7 +114,7 @@ and bus routes 27 and 44. lorem ipsum dolor sit amet, consectetur adipiscing eli
                 <p className="w-[670px] font-regular text-[14px] text-black">
                   {expanded ? fullText : shortText}
                   <span
-                    className="pt-5 flex items-center text-[#ef3a45] cursor-pointer hover:underline w-fit"
+                    className="pt-5 flex items-center text-[#58A6A0] cursor-pointer hover:underline w-fit"
                     onClick={() => setExpanded(!expanded)}
                   >
                     {expanded ? "See less..." : "See more..."}
@@ -174,7 +174,7 @@ and bus routes 27 and 44. lorem ipsum dolor sit amet, consectetur adipiscing eli
                     Dates
                     <button
                       onClick={() => setOpenDatePicker(!openDatePicker)}
-                      className="cursor-pointer h-[50px] mt-1 py-2 px-5 border border-gray-300 rounded-md text-black text-left hover:border-[#EF3A45] focus:border-[#EF3A45] focus:ring-[#EF3A45] focus:outline-none transition-colors"
+                      className="cursor-pointer h-[50px] mt-1 py-2 px-5 border border-gray-300 rounded-md text-black text-left hover:border-[#58A6A0] focus:border-[#58A6A0] focus:ring-[#58A6A0] focus:outline-none transition-colors"
                     >
                       {`${format(
                         dateRange[0].startDate,
@@ -189,7 +189,7 @@ and bus routes 27 and 44. lorem ipsum dolor sit amet, consectetur adipiscing eli
                           moveRangeOnFirstSelection={false}
                           ranges={dateRange}
                           className="text-[18px]"
-                          rangeColors={["#EF3A45"]}
+                          rangeColors={["#58A6A0"]}
                         />
                       </div>
                     )}
@@ -201,7 +201,7 @@ and bus routes 27 and 44. lorem ipsum dolor sit amet, consectetur adipiscing eli
                     </label>
                     <button
                       onClick={() => setIsOpen(!isOpen)}
-                      className="cursor-pointer w-full h-[50px] flex items-center justify-between px-5 py-3 border border-[#e0e0e0] bg-white text-black rounded-md hover:border-[#EF3A45] focus:border-[#EF3A45] transition-colors"
+                      className="cursor-pointer w-full h-[50px] flex items-center justify-between px-5 py-3 border border-[#e0e0e0] bg-white text-black rounded-md hover:border-[#58A6A0] focus:border-[#58A6A0] transition-colors"
                     >
                       <span className="text-left">
                         {guests
@@ -229,7 +229,7 @@ and bus routes 27 and 44. lorem ipsum dolor sit amet, consectetur adipiscing eli
                         {options.map((option) => (
                           <div
                             key={option}
-                            className="px-5 py-3 cursor-pointer hover:bg-[#EF3A45]/10 hover:text-[#EF3A45] transition-colors"
+                            className="px-5 py-3 cursor-pointer hover:bg-[#58A6A0]/10 hover:text-[#58A6A0] transition-colors"
                             onClick={() => handleSelect(option)}
                           >
                             {option} Guest{option > 1 ? "s" : ""}

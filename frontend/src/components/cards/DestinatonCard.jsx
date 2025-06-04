@@ -44,13 +44,13 @@ const DestinationCard = ({
               onClick={toggleLike}
               className="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center transition-colors duration-300 cursor-pointer"
             >
-              <Heart size={20} color={liked ? "#ef3a45" : "#374151"} />
+              <Heart size={20} color={liked ? "#45807b" : "#374151"} />
             </button>
           </div>
           <div className="w-[40px] h-[1.5px] bg-[#E5E7EB]"></div>
           <span className="">
             <p className="font-normal text-sm text-gray-500">{description}</p>
-            <p className="mt-[10px] font-normal text-sm text-[#ef3a45]">
+            <p className="mt-[10px] font-normal text-sm text-[#45807b]">
               {amenities}
             </p>
           </span>

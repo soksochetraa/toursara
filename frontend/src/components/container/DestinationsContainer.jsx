@@ -63,7 +63,7 @@ const DestinationsContainer = ({ searchQuery, onCardClick }) => {
             onClick={() => handlePageChange(i)}
             className={`px-3 py-1 cursor-pointer rounded mx-1 ${
               i === currentPage
-                ? "bg-[#ef3a45] text-white"
+                ? "bg-[#58A6A0] text-white"
                 : "bg-gray-100 text-gray-700"
             }`}
           >
@@ -110,9 +110,9 @@ const DestinationsContainer = ({ searchQuery, onCardClick }) => {
               onClick={() => handleAmenityFilter(amenity)}
               className={`px-4 py-2 rounded-full border cursor-pointer ${
                 selectedAmenity === amenity
-                  ? "bg-[#ef3a45] text-white border-[#ef3a45]"
+                  ? "bg-[#58A6A0] text-white border-[#58A6A0]"
                   : "bg-white text-gray-700 border-gray-300"
-              } hover:bg-[#ef3a45]/90 hover:text-white transition`}
+              } hover:bg-[#58A6A0]/90 hover:text-white transition`}
             >
               {amenity}
             </button>
@@ -121,7 +121,7 @@ const DestinationsContainer = ({ searchQuery, onCardClick }) => {
         <div className="flex justify-center">
           <button
             onClick={() => setSelectedAmenity("")}
-            className="cursor-pointer px-4 py-2 rounded-full border bg-[#ef3a45] text-white hover:bg-[#ef3a45]/90 transition"
+            className="cursor-pointer px-4 py-2 rounded-full border bg-[#58A6A0] text-white hover:bg-[#58A6A0]/90 transition"
           >
             Reset Filter
           </button>

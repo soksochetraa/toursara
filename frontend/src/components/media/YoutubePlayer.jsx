@@ -24,10 +24,10 @@ const YouTubePlayer = ({ videoSrc }) => {
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"
             onClick={handlePlay}
           >
-            <button className="relative w-[60px] h-[60px] bg-[#ef3a45] text-white rounded-full flex items-center cursor-pointer justify-center">
-              <div className="absolute inset-0 flex justify-center top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 items-center bg-[#ef3a45] rounded-full opacity-75 w-[45px] h-[45px]"></div>
-              <div className="absolute inset-0 flex justify-center items-center top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 bg-[#ef3a45] rounded-full opacity-50 w-[90px] h-[90px]"></div>
-              <div className="absolute inset-0 flex justify-center items-center top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 bg-[#ef3a45] rounded-full opacity-25 w-[115px] h-[115px]"></div>
+            <button className="relative w-[60px] h-[60px] bg-[#45807b] text-white rounded-full flex items-center cursor-pointer justify-center">
+              <div className="absolute inset-0 flex justify-center top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 items-center bg-[#45807b] rounded-full opacity-75 w-[45px] h-[45px]"></div>
+              <div className="absolute inset-0 flex justify-center items-center top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 bg-[#45807b] rounded-full opacity-50 w-[90px] h-[90px]"></div>
+              <div className="absolute inset-0 flex justify-center items-center top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 bg-[#45807b] rounded-full opacity-25 w-[115px] h-[115px]"></div>
               <Play className="z-10" />
             </button>
           </div>
