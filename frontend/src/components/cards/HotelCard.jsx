@@ -20,8 +20,8 @@ const HotelCard = ({
 
   return (
     <>
-      <div className="w-[760px] h-[1.5px] rounded-full mb-[20px] bg-[#E5E7EB]"></div>
-      <div className="w-[760px] flex gap-6 self-stretch cursor-pointer">
+      <div className="h-[1.5px] rounded-full mb-[20px] bg-[#E5E7EB]"></div>
+      <div className="flex gap-6 self-stretch cursor-pointer">
         <div className="w-[300px] h-[200px] flex justify-center items-center">
           <div
             className="w-[300px] h-[200px] rounded-xl border border-solid border-gray-200 overflow-hidden"

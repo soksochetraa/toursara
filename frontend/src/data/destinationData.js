@@ -48,7 +48,7 @@ const mockDestinations = [
     id: 4,
     image:
       "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
-    location: "Sihanoukville, Cambodia",
+    location: "Preah Sihanouk, Cambodia",
     title: "Otres Beach",
     description:
       "Relax on one of Cambodia's most beautiful and serene beaches.",
@@ -227,7 +227,7 @@ const mockDestinations = [
     id: 16,
     image:
       "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
-    location: "Sihanoukville, Cambodia",
+    location: "Preah Sihanouk, Cambodia",
     title: "Ream National Park",
     description:
       "Visit one of Cambodia's most biodiverse areas, offering both beaches and rainforest.",
@@ -362,7 +362,7 @@ const mockDestinations = [
     id: 25,
     image:
       "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
-    location: "Sihanoukville, Cambodia",
+    location: "Preah Sihanouk, Cambodia",
     title: "Koh Rong Samloem",
     description:
       "A peaceful island getaway, known for its pristine beaches and clear waters.",
@@ -407,10 +407,10 @@ const mockDestinations = [
     id: 28,
     image:
       "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
-    location: "Sihanoukville, Cambodia",
+    location: "Preah Sihanouk, Cambodia",
     title: "Serendipity Beach",
     description:
-      "One of Sihanoukville's most famous beaches, perfect for lounging or beach activities.",
+      "One of Preah Sihanouk's most famous beaches, perfect for lounging or beach activities.",
     amenities: "Beaches · Nature · Adventure",
     rating: "4.3",
     reviews: "920",

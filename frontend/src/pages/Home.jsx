@@ -11,7 +11,7 @@ import {
   Youtube,
   ChevronLeft,
   ChevronRight,
-} from "lucide-react"; // Import Chevrons
+} from "lucide-react";
 import Fram from "../assets/images/fram-imag.svg";
 import Icon from "../assets/images/icon.svg";
 import Icon1 from "../assets/images/icon_money.svg";
@@ -20,20 +20,19 @@ import ImgVideo1 from "../assets/images/img_video1.svg";
 import ImgVideo2 from "../assets/images/img_video2.svg";
 import ImgVideo3 from "../assets/images/img_video3.svg";
 import HighlightCrad from "../components/cards/HighlightCrad";
-import SreyMeii from "../assets/images/Srey_Meii.svg"; // Placeholder - replace with actual images
-import SreyRoth from "../assets/images/Srey_Roth.svg"; // Placeholder
-import SreyKa from "../assets/images/Srey_Ka.svg"; // Placeholder
-import SreyKhouch from "../assets/images/Srey_Khouch.svg"; // Placeholder
-import Kanhna from "../assets/images/Kanhna.svg"; // Placeholder - replace with actual images
-import Lin from "../assets/images/Lin.svg"; // Placeholder - replace with actual images
-import linda from "../assets/images/Linda.svg"; // Placeholder - replace with actual images
-import Ly from "../assets/images/Ly.svg"; // Placeholder - replace with actual images
-import Seav_ling from "../assets/images/Seav_ling.svg"; // Placeholder - replace with actual images
-import Teav from "../assets/images/Teav.svg"; // Placeholder - replace with actual images
-import Bopha from "../assets/images/Bopha.svg"; // Placeholder - replace with actual images
-import Chanthy from "../assets/images/Chanthy.svg"; // Placeholder - replace with actual images
+import SreyMeii from "../assets/images/Srey_Meii.svg";
+import SreyRoth from "../assets/images/Srey_Roth.svg";
+import SreyKa from "../assets/images/Srey_Ka.svg";
+import SreyKhouch from "../assets/images/Srey_Khouch.svg";
+import Kanhna from "../assets/images/Kanhna.svg";
+import Lin from "../assets/images/Lin.svg";
+import linda from "../assets/images/Linda.svg";
+import Ly from "../assets/images/Ly.svg";
+import Seav_ling from "../assets/images/Seav_ling.svg";
+import Teav from "../assets/images/Teav.svg";
+import Bopha from "../assets/images/Bopha.svg";
+import Chanthy from "../assets/images/Chanthy.svg";
 
-// Define a data structure to hold images for each category (for the carousel, as in previous solution)
 const categoryImages = {
   Cultural: [
     { src: ImgVideo1, originalIndex: 0 },
@@ -57,60 +56,56 @@ const categoryImages = {
   ],
 };
 
-// NEW: Data structure for Highlight Cards based on categories
 const highlightCardsData = {
   Cultural: [
     {
       bgImg:
-        "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc",
+        "https://extraordinaryjourneys.com/wp-content/uploads/2024/11/Cambodia-Angkor-Wat-1-2-1024x502.jpg",
       text: (
         <>
-          Explore our World's Largest <br /> Religion Monument
+          Discover the Grandeur of <br /> Angkor Wat Temple
         </>
       ),
     },
     {
       bgImg:
-        "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc",
+        "https://goldentemple.asia/hotel/wp-content/uploads/2017/03/Main6-qpr.jpg",
       text: (
         <>
-          Explore our Angkor <br /> National Park
+          Visit the Iconic Faces <br /> of Bayon Temple
         </>
       ),
     },
     {
       bgImg:
-        "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc",
+        "https://upload.wikimedia.org/wikipedia/commons/b/b2/Silverpagoda.jpg",
       text: (
         <>
-          Explore our Rich's <br /> Cultural Khmer Art
+          Admire Royal Relics at <br /> Silver Pagoda
         </>
       ),
     },
     {
-      bgImg:
-        "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc",
+      bgImg: "https://www.unesco.org/sites/default/files/national_museum.jpg",
       text: (
         <>
-          Explore our Wonderful <br /> Capital of Cambodia
+          Learn Khmer Heritage at <br /> National Museum
         </>
       ),
     },
     {
-      bgImg:
-        "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc",
+      bgImg: "https://www.unesco.org/sites/default/files/national_museum.jpg",
       text: (
         <>
-          Explore our genocide <br /> Museum Toul Sleng
+          Learn Khmer Heritage at <br /> National Museum
         </>
       ),
     },
     {
-      bgImg:
-        "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc",
+      bgImg: "https://www.unesco.org/sites/default/files/national_museum.jpg",
       text: (
         <>
-          Explore our Bayon <br /> Religions Temple
+          Learn Khmer Heritage at <br /> National Museum
         </>
       ),
     },
@@ -118,55 +113,37 @@ const highlightCardsData = {
   Popular: [
     {
       bgImg:
-        "https://imgs.search.brave.com/TN6KvCR-KbM2ACuSb-U9cL0WP2bKCu8K9POLFKJPaWQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzM5LzU2LzMw/LzM2MF9GXzMzOTU2/MzAyNV9pT0h3aktr/TzdGbkF0QnZoNUs0/SGxnNlRWQ0t0SHBn/cC5qcGc",
+        "https://www.tourismcambodia.com/img/uploads/attraction/koh-rong.jpg",
       text: (
         <>
-          Discover the Vibrant <br /> Markets of Phnom Penh
+          Relax on the Beaches of <br /> Koh Rong Island
         </>
       ),
     },
     {
       bgImg:
-        "https://img.freepik.com/free-photo/koh-rong-island-cambodia_335224-220.jpg?t=st=1716827278~exp=1716830878~hmac=c6d17e5a07c4587d1976241a4a42b104996f0144f800726715f3333331b26802&w=1380",
+        "https://www.tourismcambodia.com/img/uploads/attraction/royal-palace.jpg",
       text: (
         <>
-          Relax on the Stunning <br /> Beaches of Koh Rong
+          Explore the Royal Palace <br /> of Phnom Penh
         </>
       ),
     },
     {
       bgImg:
-        "https://img.freepik.com/free-photo/preah-khan-temple-angkor-cambodia_335224-221.jpg?t=st=1716827303~exp=1716830903~hmac=862413e6189914757c30700593740e6983794b150992383c8869c36c6418efda&w=1380",
+        "https://www.tourismcambodia.com/img/uploads/attraction/phnom-bakheng.jpg",
       text: (
         <>
-          Explore the Hidden <br /> Gems of Preah Khan
+          Catch Sunset Views at <br /> Phnom Bakheng
         </>
       ),
     },
     {
       bgImg:
-        "https://img.freepik.com/free-photo/cambodian-traditional-boat-mekong-river_335224-222.jpg?t=st=1716827324~exp=1716830924~hmac=e20980590a2a4b8f5223c72b21cf56b850d249f05a968600d80d2417c67554f7&w=1380",
+        "https://www.tourismcambodia.com/img/uploads/attraction/sihanoukville.jpg",
       text: (
         <>
-          Cruise Along the Majestic <br /> Mekong River
-        </>
-      ),
-    },
-    {
-      bgImg:
-        "https://img.freepik.com/free-photo/national-museum-cambodia_335224-223.jpg?t=st=1716827344~exp=1716830944~hmac=09520442345e656d05f560e90c681284a1426361a38a7c29e46a782a201c1374&w=1380",
-      text: (
-        <>
-          Visit the National <br /> Museum in Phnom Penh
-        </>
-      ),
-    },
-    {
-      bgImg:
-        "https://img.freepik.com/free-photo/silver-pagoda-royal-palace-phnom-penh_335224-224.jpg?t=st=1716827364~exp=1716830964~hmac=d927a7c92b23a76e936c56839352e85a5a73e6f777c5b9679f2257f8928373b8&w=1380",
-      text: (
-        <>
-          Marvel at the Silver Pagoda <br /> within the Royal Palace
+          Visit Sihanoukville's <br /> Coastal Paradise
         </>
       ),
     },
@@ -174,55 +151,37 @@ const highlightCardsData = {
   Recommended: [
     {
       bgImg:
-        "https://img.freepik.com/free-photo/bokor-hill-station-cambodia_335224-225.jpg?t=st=1716827409~exp=1716831009~hmac=40f8080f08a55427d140e74f177c92476d1e43e2f9d506691456576b50e39660&w=1380",
+        "https://www.tourismcambodia.com/img/uploads/attraction/kampot-pepper.jpg",
       text: (
         <>
-          Explore the Eerie Beauty <br /> of Bokor Hill Station
+          Taste World-Class Pepper <br /> in Kampot
         </>
       ),
     },
     {
       bgImg:
-        "https://img.freepik.com/free-photo/kratie-mekong-river-cambodia_335224-226.jpg?t=st=1716827435~exp=1716831035~hmac=b375b4f65355a297924376c8e3bb2a05d898495efc5d14041b655512d718b5b7&w=1380",
+        "https://www.tourismcambodia.com/img/uploads/attraction/bokor-hill.jpg",
       text: (
         <>
-          Spot Rare Irrawaddy Dolphins <br /> in Kratie
+          Trek Through Misty Trails <br /> of Bokor Hill
         </>
       ),
     },
     {
       bgImg:
-        "https://img.freepik.com/free-photo/cambodian-pepper-plantation_335224-227.jpg?t=st=1716827457~exp=1716831057~hmac=80a373b98c92a64c48324e9334dd163c457313a233b8277259275f10a7b458d9&w=1380",
+        "https://www.tourismcambodia.com/img/uploads/attraction/kratie-dolphins.jpg",
       text: (
         <>
-          Tour a Pepper Plantation <br /> in Kampot
+          Spot Irrawaddy Dolphins <br /> in Kratie
         </>
       ),
     },
     {
       bgImg:
-        "https://img.freepik.com/free-photo/cambodian-cooking-class_335224-228.jpg?t=st=1716827479~exp=1716831079~hmac=d240d437149a712f5a65239a0397736e65a6f236e788771192e43f55097f3747&w=1380",
+        "https://www.tourismcambodia.com/img/uploads/attraction/phnom-kulen.jpg",
       text: (
         <>
-          Take a Cambodian Cooking <br /> Class
-        </>
-      ),
-    },
-    {
-      bgImg:
-        "https://img.freepik.com/free-photo/phnom-kulen-national-park_335224-229.jpg?t=st=1716827500~exp=1716831100~hmac=c39174df44a7f96b2700344585145c2f8216124017d7f722904c62f3d5377038&w=1380",
-      text: (
-        <>
-          Hike in Phnom Kulen <br /> National Park
-        </>
-      ),
-    },
-    {
-      bgImg:
-        "https://img.freepik.com/free-photo/cambodian-traditional-dance_335224-230.jpg?t=st=1716827521~exp=1716831121~hmac=a4031d227b686e00b659c235790a8806297314644548777128cf7e85746b5d2e&w=1380",
-      text: (
-        <>
-          Enjoy a Traditional <br /> Apsara Dance Show
+          Hike to Sacred Waters <br /> at Phnom Kulen
         </>
       ),
     },
@@ -230,62 +189,43 @@ const highlightCardsData = {
   Festivals: [
     {
       bgImg:
-        "https://img.freepik.com/free-photo/water-festival-cambodia_335224-231.jpg?t=st=1716827542~exp=1716831142~hmac=2c0a4e7681c1c964177c4e5a91176b6238b695191c9f4d7f516a506720f4b360&w=1380",
+        "https://www.tourismcambodia.com/img/uploads/attraction/water-festival.jpg",
       text: (
         <>
-          Experience the Bon Om Touk <br /> Water Festival
+          Join the Exciting <br /> Water Festival
         </>
       ),
     },
     {
       bgImg:
-        "https://img.freepik.com/free-photo/khmer-new-year-celebration_335224-232.jpg?t=st=1716827566~exp=1716831166~hmac=332152065842c38865c36531405c14d9b4b036814b14d232a2656d09101d24c0&w=1380",
+        "https://www.tourismcambodia.com/img/uploads/attraction/khmer-new-year.jpg",
       text: (
         <>
-          Celebrate Khmer <br /> New Year
+          Celebrate Khmer <br /> New Year Traditions
         </>
       ),
     },
     {
       bgImg:
-        "https://img.freepik.com/free-photo/royal-ploughing-ceremony-cambodia_335224-233.jpg?t=st=1716827588~exp=1716831188~hmac=50e206e987c603a19e48f76e3381a1a5b828a2a5d21a2245b7367d8f991f868c&w=1380",
+        "https://www.tourismcambodia.com/img/uploads/attraction/pchum-ben.jpg",
       text: (
         <>
-          Witness the Royal <br /> Ploughing Ceremony
+          Observe Ancestral Rites <br /> During Pchum Ben
         </>
       ),
     },
     {
       bgImg:
-        "https://img.freepik.com/free-photo/ancestor-festival-cambodia_335224-234.jpg?t=st=1716827610~exp=1716831210~hmac=e2c14041d528b8559092419a4b868e82a60d0061e3895e6308a3d467885b51c8&w=1380",
+        "https://www.tourismcambodia.com/img/uploads/attraction/royal-ploughing.jpg",
       text: (
         <>
-          Participate in Pchum Ben <br /> Ancestor's Festival
-        </>
-      ),
-    },
-    {
-      bgImg:
-        "https://img.freepik.com/free-photo/boat-race-water-festival_335224-235.jpg?t=st=1716827628~exp=1716831228~hmac=2e49c9510166d79044238e8749e75c5e8c14e1f7f6a7d76a746533036a143526&w=1380",
-      text: (
-        <>
-          Enjoy the Excitement of <br /> Boat Races
-        </>
-      ),
-    },
-    {
-      bgImg:
-        "https://img.freepik.com/free-photo/cambodian-lantern-festival_335224-236.jpg?t=st=1716827649~exp=1716831249~hmac=025d57d762f0f46f3438a08c7c9803126f59c256d029589d89304a2d815774a3&w=1380",
-      text: (
-        <>
-          Celebrate the Lantern <br /> Festival
+          Witness Cambodia’s <br /> Royal Ploughing Day
         </>
       ),
     },
   ],
 };
 
-// Testimonial Data
 const testimonials = [
   {
     name: "Srey Meii",
@@ -362,7 +302,6 @@ const testimonials = [
   },
 ];
 
-// Star Rating Component
 const StarRating = ({ rating }) => {
   const stars = [];
   for (let i = 0; i < 5; i++) {
@@ -382,7 +321,6 @@ const StarRating = ({ rating }) => {
   return <div className="flex gap-[5px]">{stars}</div>;
 };
 
-// Testimonial Card Component
 const TestimonialCard = ({ name, text, rating, imgSrc }) => (
   <div className="w-[312px] h-[197px] bg-white  p-6 flex flex-col justify-between items-start shrink-0">
     <p className="text-[#12121299] w-[216px] h-[75px] text-[14px] font-[lato] ml-[6px] mb-4 leading-[180%] ">
@@ -640,11 +578,11 @@ function Home() {
         </div>
 
         <div className="hidden md:flex mt-[80px]">
-          <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-white text-[#5A827E] border-[1.5px] border-[#5A827E] rounded-lg text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
+          <button className="relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] bg-white text-[#58A6A0] border-[1.5px] border-[#58A6A0] rounded-lg text-base overflow-hidden z-10 group cursor-pointer transition-all duration-300 hover:shadow-[0px_7px_29px_0px_rgba(0,0,0,0.25)]">
             <span className="font-[600] transition-all duration-300 group-hover:text-white">
               View All
             </span>
-            <span className="absolute top-[100%] left-[100%] w-[300px] h-[150px] bg-[#5A827E] rounded-full z-[-1] transition-all duration-300 group-hover:top-[-30px] group-hover:left-[-30px]"></span>
+            <span className="absolute top-[100%] left-[100%] w-[300px] h-[150px] bg-[#58A6A0] rounded-full z-[-1] transition-all duration-300 group-hover:top-[-30px] group-hover:left-[-30px]"></span>
           </button>
         </div>
       </div>

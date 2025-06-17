@@ -1,24 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Play } from "lucide-react";
 
-const YouTubePlayer = ({ videoSrc }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
+const YouTubePlayer = ({
+  videoSrc,
+  w = "1230px",
+  h = "780px",
+  autoplay = false,
+}) => {
+  const [isPlaying, setIsPlaying] = useState(autoplay);
+
+  useEffect(() => {
+    setIsPlaying(autoplay);
+  }, [autoplay]);
+
   const videoId = videoSrc.split("/").pop().split("?")[0];
+  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
   const handlePlay = () => {
     setIsPlaying(true);
   };
 
-  const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-
   return (
-    <div className="w-[1230px] h-[780px] relative">
+    <div className="relative" style={{ width: w, height: h }}>
       {!isPlaying ? (
         <div
           className="relative w-full h-full bg-center bg-cover rounded-[8px]"
-          style={{
-            backgroundImage: `url(${thumbnailUrl})`,
-          }}
+          style={{ backgroundImage: `url(${thumbnailUrl})` }}
         >
           <div
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer"

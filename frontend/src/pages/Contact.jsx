@@ -1,125 +1,183 @@
-import Button from "../components/buttons/ButtonGetStart";
-import SmallMap from "../components/cards/SmallMap";
-import React, { useState } from "react";
+import { Phone, MapPin, Mail } from "lucide-react";
+import bgbanner from "../public/images/contact/bg_banner.svg";
+import GoogleMapComponent from "../components/cards/GoogleMapComponent";
 
 function Contact() {
-  const [selectedOption, setSelectedOption] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = (event) => {
-    event.preventDefault();
-    setIsOpen(!isOpen);
-  };
-
-  const handleSelectOption = (value) => {
-    setSelectedOption(value);
-    setIsOpen(false);
-  };
-
   return (
-    <section className="w-full h-[900px] bg-white flex justify-center mb-1 items-center">
-      <div className="w-[1440px] h-[900px] relative bg-white flex justify-center items-center">
-        <div className="w-[1020px] h-[900px] flex items-center justify-center">
-          <form
-            className="flex flex-col items-center justify-center gap-10"
-            action=""
-          >
-            <div className="w-[545px] p-8 flex flex-col items-end gap-5">
-              <h1 className="w-[545px] font-bold text-[54px]">Get in Touch</h1>
-              <p className="w-[545px] font-semibold text-[14px] leading-[24px] text-black">
-                Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu
-                leo molestie vel, ornare non id blandit netus.
-              </p>
-              <input
-                type="text"
-                id="username"
-                placeholder="Name"
-                className="w-[545px] h-[50px] flex items-center gap-2.5 px-5 py-3 border border-solid border-[#e0e0e0]"
-              />
-              <input
-                type="email"
-                id="email"
-                placeholder="Email"
-                className="w-[545px] h-[50px] flex items-center gap-2.5 px-5 py-3 border border-solid border-[#e0e0e0]"
-              />
-              <div className="relative w-[545px]">
-                <button
-                  onClick={(e) => toggleDropdown(e)}
-                  className="w-full h-[50px] flex items-center justify-between cursor-pointer px-5 py-3 border border-solid border-[#e0e0e0] bg-white text-black rounded-md"
+    <section className="flex flex-col items-center justify-center gap-10 py-[50px]">
+      <section className="w-[1200px] bg-[#58A6A0] h-80 flex justify-center items-center gap-2.5 object-cover rounded-[20px]">
+        <h1 className="font-bold text-[60px] text-white">Contact Us</h1>
+      </section>
+
+      <div className="w-[1200px] flex justify-between px-20">
+        <div className="flex flex-col items-center gap-4">
+          <Phone size={40} />
+          <h1 className="font-semibold text-[28px] text-center capitalize text-black">
+            Phone
+          </h1>
+          <p className="font-normal text-[16px] capitalize text-black">
+            (358) 707-4989
+          </p>
+          <p className="font-normal text-[16px] capitalize text-black">
+            (358) 707-4989
+          </p>
+        </div>
+        <div className="flex flex-col items-center gap-4">
+          <MapPin size={40} />
+          <h1 className="font-semibold text-[28px] text-center capitalize text-black">
+            Address
+          </h1>
+          <p className="font-normal text-[16px] capitalize text-black">
+            7914 Lees Creek St. Dayton, OH 45420
+          </p>
+          <p className="font-normal text-[16px] capitalize text-black">
+            8911 Tanglewood Ave. Capitol Heights, MD 20743
+          </p>
+        </div>
+        <div className="flex flex-col items-center gap-4">
+          <Mail size={40} />
+          <h1 className="font-semibold text-[28px] text-center capitalize text-black">
+            Email
+          </h1>
+          <p className="font-normal text-[16px] capitalize text-black">
+            toursara@gmail.com
+          </p>
+          <p className="font-normal text-[16px] capitalize text-black">
+            info.toursara@gmail.com
+          </p>
+        </div>
+      </div>
+
+      <section className="flex gap-12 px-[120px] py-[20px]">
+        <div
+          className="flex justify-center items-end w-[368px] h-[602px] object-cover rounded-[20px] py-[50px]"
+          style={{ backgroundImage: `url(${bgbanner})` }}
+        >
+          <div className="flex flex-col items-center gap-10">
+            <p class="font-normal text-[16px] text-center capitalize text-white">
+              Don't know <br /> which destination to choose?
+            </p>
+            <span class="font-semibold text-[26px] text-center text-white">
+              We Can help you
+            </span>
+          </div>
+        </div>
+
+        <form className="flex flex-col gap-7.5">
+          <div className="flex flex-col gap-5">
+            <span className="font-bold text-[40px] text-black">
+              Contact Us For Any Questions
+            </span>
+            <span className="font-normal text-base text-black opacity-[0.60]">
+              Eu id cras morbi consectetur viverra eleifend pellentesque dui.
+            </span>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            <div className="flex gap-12">
+              <div className="flex flex-col gap-[18px]">
+                <label
+                  htmlFor="fullName"
+                  className="font-medium text-[18px] capitalize text-black"
                 >
-                  <span>{selectedOption || "How did you find us?"}</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 text-[#888]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                {isOpen && (
-                  <div className="absolute w-full mt-1 bg-white border border-solid border-[#e0e0e0] rounded-md shadow-lg z-20">
-                    <div
-                      className="px-5 py-3 hover:bg-[#f0f0f0] cursor-pointer"
-                      onClick={() => handleSelectOption("Search Engine")}
-                    >
-                      Search Engine
-                    </div>
-                    <div
-                      className="px-5 py-3 hover:bg-[#f0f0f0] cursor-pointer"
-                      onClick={() => handleSelectOption("Social Media")}
-                    >
-                      Social Media
-                    </div>
-                    <div
-                      className="px-5 py-3 hover:bg-[#f0f0f0] cursor-pointer"
-                      onClick={() => handleSelectOption("Friend")}
-                    >
-                      Friend
-                    </div>
-                    <div
-                      className="px-5 py-3 hover:bg-[#f0f0f0] cursor-pointer"
-                      onClick={() => handleSelectOption("Advertisement")}
-                    >
-                      Advertisement
-                    </div>
-                    <div
-                      className="px-5 py-3 hover:bg-[#f0f0f0] cursor-pointer"
-                      onClick={() => handleSelectOption("Other")}
-                    >
-                      Other
-                    </div>
-                  </div>
-                )}
+                  Full Name
+                </label>
+                <input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  className="w-[368px] h-[50px] border border-solid border-black opacity-[0.60] px-4"
+                  required
+                />
               </div>
+              <div className="flex flex-col gap-[18px]">
+                <label
+                  htmlFor="phone"
+                  className="font-medium text-[18px] capitalize text-black"
+                >
+                  Phone
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  className="w-[368px] h-[50px] border border-solid border-black opacity-[0.60] px-4"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="flex gap-12">
+              <div className="flex flex-col gap-[18px]">
+                <label
+                  htmlFor="email"
+                  className="font-medium text-[18px] capitalize text-black"
+                >
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  className="w-[368px] h-[50px] border border-solid border-black opacity-[0.60] px-4"
+                  required
+                />
+              </div>
+              <div className="flex flex-col gap-[18px]">
+                <label
+                  htmlFor="subject"
+                  className="font-medium text-[18px] capitalize text-black"
+                >
+                  Subject
+                </label>
+                <input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  className="w-[368px] h-[50px] border border-solid border-black opacity-[0.60] px-4"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-[18px] self-stretch">
+              <label
+                htmlFor="message"
+                className="font-medium text-[18px] capitalize text-black"
+              >
+                Message
+              </label>
               <textarea
                 id="message"
-                placeholder="Your message"
-                className="w-[545px] h-[150px] resize-none px-5 py-3 border border-solid border-[#e0e0e0] rounded-md"
-              />
-              <Button type="submit" text="Submit" ariaLabel="Submit Button" />
+                name="message"
+                className="self-stretch h-[92px] border border-solid border-black opacity-[0.60] px-4 py-2 resize-none"
+                required
+              ></textarea>
             </div>
-          </form>
-        </div>
-        <div className="absolute right-[100px] top-0 w-[520px] h-[900px] flex justify-center items-center">
-          <SmallMap
-            width="600px"
-            height="750px"
-            borderRadius="0px"
-            lat={13.4125}
-            lng={103.866667}
-            title="Angkor Wat"
-            province="Siem Reap, Cambodia"
-            radius={800}
-          />
-        </div>
-        <div className="w-[419px] h-[900px] bg-[#58A6A0]"></div>
+          </div>
+
+          <button
+            type="submit"
+            className="w-[784px] h-[60px] flex justify-center items-center gap-2 bg-[#58a6a0] px-10 rounded-xl cursor-pointer hover:bg-[#4f9a8e] transition-colors duration-300"
+          >
+            <span className="font-medium text-[16px] text-white">
+              Send Message
+            </span>
+          </button>
+        </form>
+      </section>
+      <div className="mb-10 w-[1200px]">
+        <GoogleMapComponent
+          activeDestination={{
+            lat: 11.5763,
+            lng: 104.9121,
+            title: "Royal University of Phnom Penh",
+            province: "Phnom Penh",
+            image:
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/RUPP_Main_Building.jpg/800px-RUPP_Main_Building.jpg",
+          }}
+          width="1200px"
+          height="360px"
+        />
       </div>
     </section>
   );

@@ -6,34 +6,38 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 
-const containerStyle = {
-  width: "1100px",
-  height: "980px",
-  borderRadius: "8px",
-};
-
-const defaultCenter = {
-  lat: 12.5657,
-  lng: 104.991,
-};
-
-const GoogleMapComponent = ({ activeDestination }) => {
+const GoogleMapComponent = ({
+  activeDestination,
+  width = "1100px",
+  height = "980px",
+}) => {
   const [selectedPlace, setSelectedPlace] = useState(null);
   const mapRef = useRef(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const containerStyle = {
+    width,
+    height,
+    borderRadius: "8px",
+  };
+
+  const defaultCenter = {
+    lat: 12.5657,
+    lng: 104.991,
+  };
 
   const onLoad = (map) => {
     mapRef.current = map;
+    setIsLoaded(true);
   };
 
   useEffect(() => {
-    if (activeDestination) {
+    if (activeDestination && mapRef.current) {
       setSelectedPlace(activeDestination);
-      if (mapRef.current) {
-        mapRef.current.panTo({
-          lat: activeDestination.lat,
-          lng: activeDestination.lng,
-        });
-      }
+      mapRef.current.panTo({
+        lat: activeDestination.lat,
+        lng: activeDestination.lng,
+      });
     }
   }, [activeDestination]);
 
@@ -45,7 +49,7 @@ const GoogleMapComponent = ({ activeDestination }) => {
         zoom={13}
         onLoad={onLoad}
       >
-        {activeDestination && (
+        {isLoaded && activeDestination && (
           <Marker
             position={{
               lat: activeDestination.lat,
