@@ -1,10 +1,22 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
-const Button = ({ text, ariaLabel, className, onClick = () => {} }) => {
+const Button = ({ text, ariaLabel, className, onClick }) => {
+  const navigate = useNavigate(); // Initialize navigate
+
+  const handleClick = (event) => {
+    // If a custom onClick is provided, call it first
+    if (onClick) {
+      onClick(event);
+    }
+    // Then navigate to the login page
+    navigate("/login"); // The path to your login page
+  };
+
   return (
     <div className="flex flex-col justify-center items-center w-[225px] h-[75px] gap-2.5">
       <button
-        onClick={onClick}
+        onClick={handleClick} // Use the new handleClick
         className={`relative flex items-center justify-center h-[56px] w-[225px] px-[50px] py-[10px] 
         bg-[#58A6A0] text-white border-[1.5px] border-[#58A6A0] rounded-lg font-medium text-base mt-5 
         overflow-hidden z-10 group cursor-pointer transition-all duration-300 

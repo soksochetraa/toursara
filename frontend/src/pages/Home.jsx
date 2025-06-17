@@ -720,7 +720,7 @@ function Home() {
           {/* Prev Button */}
           <button
             onClick={handlePrevTestimonial}
-            className={`absolute left-[50px] top-1/2 transform -translate-y-1/2 bg-[#58A6A0] rounded-[10%] p-2 shadow-md hover:bg-red-700 z-20 ${
+            className={`absolute left-[50px] top-1/2 transform -translate-y-1/2 bg-[#58A6A0] rounded-[10%] p-2 shadow-md hover:bg-[#45807B] z-20 ${
               currentTestimonialIndex === 0
                 ? "opacity-50 cursor-not-allowed"
                 : ""
@@ -763,7 +763,7 @@ function Home() {
           {/* Next Button */}
           <button
             onClick={handleNextTestimonial}
-            className={`absolute right-[50px] top-1/2 transform -translate-y-1/2 bg-[#58A6A0] rounded-[10%]  p-2 shadow-md hover:bg-red-700 z-20 ${
+            className={`absolute right-[50px] top-1/2 transform -translate-y-1/2 bg-[#58A6A0] rounded-[10%]  p-2 shadow-md hover:bg-[#45807B] z-20 ${
               currentTestimonialIndex === totalTestimonialSlides - 1
                 ? "opacity-50 cursor-not-allowed"
                 : ""
