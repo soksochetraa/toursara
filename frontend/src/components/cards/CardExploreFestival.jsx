@@ -1,5 +1,5 @@
 import React from "react";
-import arrow from "../../assets/images/arrow_hotel.svg"; // Unused, can remove if not needed
+import arrow from "../../assets/images/arrow_hotel.svg";
 
 export default function CardExploreFestival({
   w = "780px",

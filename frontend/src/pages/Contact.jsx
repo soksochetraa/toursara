@@ -3,6 +3,15 @@ import bgbanner from "../public/images/contact/bg_banner.svg";
 import GoogleMapComponent from "../components/cards/GoogleMapComponent";
 
 function Contact() {
+  const activeDestination = {
+    lat: 11.5688868,
+    lng: 104.893155,
+    title: "Institute of Foreign Languages (IFL)",
+    province: "Phnom Penh",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Institute_of_Foreign_Languages_campus.jpg/800px-Institute_of_Foreign_Languages_campus.jpg",
+  };
+
   return (
     <section className="flex flex-col items-center justify-center gap-10 py-[50px]">
       <section className="w-[1200px] bg-[#58A6A0] h-80 flex justify-center items-center gap-2.5 object-cover rounded-[20px]">
@@ -167,14 +176,7 @@ function Contact() {
       </section>
       <div className="mb-10 w-[1200px]">
         <GoogleMapComponent
-          activeDestination={{
-            lat: 11.5763,
-            lng: 104.9121,
-            title: "Royal University of Phnom Penh",
-            province: "Phnom Penh",
-            image:
-              "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/RUPP_Main_Building.jpg/800px-RUPP_Main_Building.jpg",
-          }}
+          activeDestination={activeDestination}
           width="1200px"
           height="360px"
         />

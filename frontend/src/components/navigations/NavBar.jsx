@@ -1,25 +1,33 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import logo from "../../assets/images/toursara_logo.svg";
 import Button from "../buttons/ButtonGetStart";
 
-const links = [
-  { label: "HOME", path: "/" },
-  { label: "ABOUT US", path: "/about" },
-  { label: "ABOUT CAMBODIA", path: "/cambodia" },
-  { label: "HOTEL", path: "/hotel" },
-  { label: "TRAVEL", path: "/travel" },
-  { label: "CONTACT", path: "/contact" },
-];
-
 const NavBar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsLoggedIn(!!token);
+  }, [location.pathname]);
+
+  const links = [
+    { label: "HOME", path: isLoggedIn ? "/explore" : "/" },
+    { label: "ABOUT US", path: "/about" },
+    { label: "ABOUT CAMBODIA", path: "/cambodia" },
+    { label: "HOTEL", path: "/hotel" },
+    { label: "TRAVEL", path: "/travel" },
+    { label: "CONTACT", path: "/contact" },
+  ];
 
   const getActivePath = (path) => {
     if (
       location.pathname === "/explore" ||
       location.pathname === "/explore/detail"
     ) {
-      return path === "/";
+      return path === "/explore" || (isLoggedIn && path === "/");
     } else if (location.pathname === "/hotel/detail") {
       return path === "/hotel";
     }
@@ -37,8 +45,8 @@ const NavBar = () => {
       <img
         src={logo}
         alt="Logo"
-        className="w-[111px] h-[125px] cursor-pointer "
-        onClick={() => (window.location.href = "/")}
+        className="w-[111px] h-[125px] cursor-pointer"
+        onClick={() => (window.location.href = isLoggedIn ? "/explore" : "/")}
       />
       <ul className="nav-links flex justify-around items-center w-[800px] h-[75px]">
         {links.map((link) => (
@@ -62,7 +70,34 @@ const NavBar = () => {
           </li>
         ))}
       </ul>
-      <Button text="GET STARTED" ariaLabel="Get Started Button" />
+
+      {isLoggedIn ? (
+        <div className="relative group">
+          <button className="bg-[#58A6A0] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#4a8f8a] transition duration-300">
+            PROFILE
+          </button>
+          <div className="absolute right-0 top-[50px] bg-white shadow-lg rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300 z-50">
+            <button
+              onClick={() => navigate("/account")}
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+            >
+              My Account
+            </button>
+            <button
+              onClick={() => {
+                localStorage.removeItem("token");
+                localStorage.removeItem("user");
+                navigate("/");
+              }}
+              className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 w-full text-left"
+            >
+              Logout
+            </button>
+          </div>
+        </div>
+      ) : (
+        <Button text="GET STARTED" ariaLabel="Get Started Button" />
+      )}
     </nav>
   );
 };

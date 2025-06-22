@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import SmallMap from "../components/cards/SmallMap";
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
@@ -11,14 +11,30 @@ import {
 
 function DestinationsDetail() {
   const navigate = useNavigate();
-  const [selectedImage, setSelectedImage] = useState(
-    "https://lp-cms-production.imgix.net/2022-03/Cambodia%20Siem%20Reap%20%C2%A9%20Matteo%20Colombo%20GettyImages-1304987816.jpg?w=1095&fit=crop&crop=faces%2Cedges&auto=format&q=75"
-  );
+  const { state } = useLocation();
+
+  const destination = state || {
+    id: 1,
+    image:
+      "https://cdn.britannica.com/74/5674-050-57803272/temples-complex-Angkor-Thom-Cambodia.jpg",
+    location: "Siem Reap, Cambodia",
+    title: "Angkor Wat",
+    description:
+      "Discover the largest religious monument in the world, a stunning temple complex.",
+    amenities: "Temples · History · Culture",
+    rating: "4.8",
+    reviews: "1254",
+    stays: "210",
+    lat: 13.4125,
+    lng: 103.8668,
+  };
+
+  const [selectedImage, setSelectedImage] = useState(destination.image);
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState([]);
 
   const images = [
-    "https://lp-cms-production.imgix.net/2022-03/Cambodia%20Siem%20Reap%20%C2%A9%20Matteo%20Colombo%20GettyImages-1304987816.jpg?w=1095&fit=crop&crop=faces%2Cedges&auto=format&q=75",
+    destination.image,
     "https://images.squarespace-cdn.com/content/v1/54930d4ae4b018401d7b66f4/1472730432571-U4G41940R1RNDZPP4M1S/20160828-DSC01698.jpg",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSijq6qra2giMOup8_fQwpby-5ak_l0txl7hCGZhrHkUii0047fAUmoiQ-EpUo_8ZaQPgA&usqp=CAU",
     "https://withlocals-com-res.cloudinary.com/image/upload/w_412,h_290,c_fill,g_auto,q_auto,dpr_3.0,f_auto/657ebebb96d93ca77a5b697364ef7348",
@@ -30,7 +46,7 @@ function DestinationsDetail() {
     const fetchWeather = async () => {
       try {
         const apiKey = `21da8d1db1e7b1ca184c222978b3316b`;
-        const city = "Siem Reap";
+        const city = destination.location.split(",")[0];
         const weatherRes = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
         );
@@ -40,6 +56,7 @@ function DestinationsDetail() {
         const weatherData = await weatherRes.json();
         const forecastData = await forecastRes.json();
         setWeather(weatherData);
+
         const daily = [];
         const dates = new Set();
         for (const entry of forecastData.list) {
@@ -57,7 +74,7 @@ function DestinationsDetail() {
     };
 
     fetchWeather();
-  }, []);
+  }, [destination.location]);
 
   return (
     <section className="w-full h-auto flex flex-col items-center justify-start gap-5pt-10 pb-20">
@@ -71,39 +88,33 @@ function DestinationsDetail() {
         </p>
         <HugeiconsIcon icon={ArrowRight01Icon} />
         <p
-          onClick={(e) =>
+          onClick={() =>
             navigate("/explore", {
-              state: { search: e.target.textContent, scrollToSearch: true },
+              state: {
+                search: destination.location.split(",")[0],
+                scrollToSearch: true,
+              },
             })
           }
           className="text-[18px] cursor-pointer text-[#444]"
         >
-          Siem Reap
+          {destination.location.split(",")[0]}
         </p>
         <HugeiconsIcon icon={ArrowRight01Icon} />
-        <p
-          onClick={(e) =>
-            navigate("/explore", {
-              state: { search: e.target.textContent, scrollToSearch: true },
-            })
-          }
-          className="text-[18px] cursor-pointer text-[#444]"
-        >
-          Angkor Wat
-        </p>
+        <p className="text-[18px] text-[#444]">{destination.title}</p>
       </div>
 
       <section className="w-[1170px] h-auto flex items-start justify-around gap-[20px] bg-white">
         <div className="bg-white flex flex-col items-center justify-between gap-2.5">
           <h2 className="w-[770px] font-bold text-[36px] text-[#1c2b38]">
-            Angkor Wat Temple.
+            {destination.title}
           </h2>
 
           <div className="w-[770px] flex items-center justify-between mb-5">
             <div className="flex items-center gap-2.5">
               <HugeiconsIcon color="#ef3a45" icon={PinLocation03Icon} />
               <p className="text-[18px] font-semibold text-[#ef3a45]">
-                Siem Reap
+                {destination.location}
               </p>
             </div>
             <div className="flex items-center gap-2">
@@ -117,14 +128,16 @@ function DestinationsDetail() {
                   />
                 ))}
               </div>
-              <p className="text-[18px] text-[#778088]">(348 reviews)</p>
+              <p className="text-[18px] text-[#778088]">
+                ({destination.reviews} reviews)
+              </p>
             </div>
           </div>
 
           <div className="w-[770px] flex flex-col items-center gap-4">
             <img
               src={selectedImage}
-              alt="Angkor Wat"
+              alt={destination.title}
               className="rounded-[4px] object-cover w-[770px] h-[500px]"
             />
             <div className="flex gap-4 overflow-x-auto">
@@ -142,24 +155,18 @@ function DestinationsDetail() {
           </div>
 
           <p className="w-[770px] text-[16px] text-[#222] leading-7 mt-4">
-            Angkor Wat is a temple complex in Cambodia and one of the largest
-            religious monuments in the world. Originally constructed as a Hindu
-            temple dedicated to the god Vishnu, it was gradually transformed
-            into a Buddhist temple towards the end of the 12th century. The
-            temple is at the top of the high classical style of Khmer
-            architecture. It has become a symbol of Cambodia, appearing on its
-            national flag, and is the country's prime attraction for visitors.
+            {destination.description}
           </p>
 
           <SmallMap
             width="770px"
             height="540px"
             borderRadius="15px"
-            lat={11.568770435370498}
-            lng={104.85263287431638}
-            title="Angkor Wat"
-            province="Siem Reap, Cambodia"
-            imageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/20171126_Angkor_Wat_4712_DxO.jpg/500px-20171126_Angkor_Wat_4712_DxO.jpg"
+            lat={destination.lat}
+            lng={destination.lng}
+            title={destination.title}
+            province={destination.location}
+            imageUrl={destination.image}
           />
         </div>
 

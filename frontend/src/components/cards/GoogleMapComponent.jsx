@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   GoogleMap,
   LoadScript,
@@ -14,6 +15,7 @@ const GoogleMapComponent = ({
   const [selectedPlace, setSelectedPlace] = useState(null);
   const mapRef = useRef(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const navigate = useNavigate(); // ✅ Correct location for hook
 
   const containerStyle = {
     width,
@@ -38,6 +40,7 @@ const GoogleMapComponent = ({
         lat: activeDestination.lat,
         lng: activeDestination.lng,
       });
+      mapRef.current.setZoom(15);
     }
   }, [activeDestination]);
 
@@ -54,10 +57,6 @@ const GoogleMapComponent = ({
             position={{
               lat: activeDestination.lat,
               lng: activeDestination.lng,
-            }}
-            icon={{
-              url: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNlZjNhNDUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1tYXAtcGluLWljb24gbHVjaWRlLW1hcC1waW4iPjxwYXRoIGQ9Ik0yMCAxMGMwIDQuOTkzLTUuNTM5IDEwLjE5My03LjM5OSAxMS43OTlhMSAxIDAgMCAxLTEuMjAyIDBDOS41MzkgMjAuMTkzIDQgMTQuOTkzIDQgMTBhOCA4IDAgMCAxIDE2IDAiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjEwIiByPSIzIi8+PC9zdmc+",
-              scaledSize: new window.google.maps.Size(46, 46),
             }}
             onClick={() => setSelectedPlace(activeDestination)}
           />
@@ -87,9 +86,9 @@ const GoogleMapComponent = ({
                 onClick={() => {
                   const currentPath = window.location.pathname;
                   if (currentPath.startsWith("/explore")) {
-                    window.location.href = "/explore/detail";
+                    navigate("/explore/detail", { state: selectedPlace });
                   } else if (currentPath.startsWith("/hotel")) {
-                    window.location.href = "/hotel/detail";
+                    navigate("/hotel/detail", { state: selectedPlace });
                   }
                 }}
                 className="text-[#45807b] cursor-pointer font-medium text-sm hover:underline"

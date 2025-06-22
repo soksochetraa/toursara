@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import HotelsContainer from "../components/container/HotelsContainer";
 import GoogleMapComponent from "../components/cards/GoogleMapComponent";
 import hotels from "../data/hotels";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import HotelHighlightCard from "../components/cards/HotelHighlightCard";
 
 import {
@@ -12,6 +11,8 @@ import {
   Wifi,
   Coffee,
   Car,
+  ChevronLeft,
+  ChevronRight,
   Utensils,
   Dumbbell,
   Bath,
@@ -74,11 +75,13 @@ function HotelPage() {
     <>
       <section
         className="absolute top-0 h-[590px] w-full flex flex-col justify-center items-center gap-[50px] px-[50px] py-2.5 bg-cover bg-no-repeat bg-center"
-        style={{ backgroundImage: `url(${HeroBg})` }}
+        style={{
+          backgroundImage: `url(https://i.pinimg.com/736x/98/8a/64/988a64a96b23993217a11c8744e39166.jpg)`,
+        }}
       >
         <div className="flex flex-col items-center justify-center gap-2.5">
           <h1 className="font-medium text-[70px] leading-[84px] text-center text-[#58A6A0]">
-            Find Next Place To Visit
+            Find Next Place To Stays
           </h1>
           <p className="font-normal text-[14px] text-center text-[#222222]">
             Discover amazing places at exclusive deals. Eat, Shop, Visit

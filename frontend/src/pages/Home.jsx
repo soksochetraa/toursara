@@ -16,9 +16,6 @@ import Fram from "../assets/images/fram-imag.svg";
 import Icon from "../assets/images/icon.svg";
 import Icon1 from "../assets/images/icon_money.svg";
 import Icon2 from "../assets/images/icon_world.svg";
-import ImgVideo1 from "../assets/images/img_video1.svg";
-import ImgVideo2 from "../assets/images/img_video2.svg";
-import ImgVideo3 from "../assets/images/img_video3.svg";
 import HighlightCrad from "../components/cards/HighlightCrad";
 import SreyMeii from "../assets/images/Srey_Meii.svg";
 import SreyRoth from "../assets/images/Srey_Roth.svg";
@@ -35,24 +32,60 @@ import Chanthy from "../assets/images/Chanthy.svg";
 
 const categoryImages = {
   Cultural: [
-    { src: ImgVideo1, originalIndex: 0 },
-    { src: ImgVideo2, originalIndex: 1 },
-    { src: ImgVideo3, originalIndex: 2 },
+    {
+      src: "https://grantourismotravels.com/wp-content/uploads/2017/05/Authentic-Fish-Amok-Recipe-Steamed-Fish-Curry-Cambodia-Copyright-2022-Terence-Carter-Grantourismo-T.jpg",
+      originalIndex: 0,
+    },
+    {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/MET_DP-1062-001.jpg/500px-MET_DP-1062-001.jpg",
+      originalIndex: 1,
+    },
+    {
+      src: "https://www.politikoffee.com/js/filemanager/source/download.jpg",
+      originalIndex: 2,
+    },
   ],
   Popular: [
-    { src: ImgVideo2, originalIndex: 1 },
-    { src: ImgVideo3, originalIndex: 2 },
-    { src: ImgVideo1, originalIndex: 0 },
+    {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/MET_DP-1062-001.jpg/500px-MET_DP-1062-001.jpg",
+      originalIndex: 1,
+    },
+    {
+      src: "https://www.politikoffee.com/js/filemanager/source/download.jpg",
+      originalIndex: 2,
+    },
+    {
+      src: "https://grantourismotravels.com/wp-content/uploads/2017/05/Authentic-Fish-Amok-Recipe-Steamed-Fish-Curry-Cambodia-Copyright-2022-Terence-Carter-Grantourismo-T.jpg",
+      originalIndex: 0,
+    },
   ],
   Recommended: [
-    { src: ImgVideo3, originalIndex: 2 },
-    { src: ImgVideo1, originalIndex: 0 },
-    { src: ImgVideo2, originalIndex: 1 },
+    {
+      src: "https://www.politikoffee.com/js/filemanager/source/download.jpg",
+      originalIndex: 2,
+    },
+    {
+      src: "https://grantourismotravels.com/wp-content/uploads/2017/05/Authentic-Fish-Amok-Recipe-Steamed-Fish-Curry-Cambodia-Copyright-2022-Terence-Carter-Grantourismo-T.jpg",
+      originalIndex: 0,
+    },
+    {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/MET_DP-1062-001.jpg/500px-MET_DP-1062-001.jpg",
+      originalIndex: 1,
+    },
   ],
   Festivals: [
-    { src: ImgVideo1, originalIndex: 0 },
-    { src: ImgVideo3, originalIndex: 2 },
-    { src: ImgVideo2, originalIndex: 1 },
+    {
+      src: "https://grantourismotravels.com/wp-content/uploads/2017/05/Authentic-Fish-Amok-Recipe-Steamed-Fish-Curry-Cambodia-Copyright-2022-Terence-Carter-Grantourismo-T.jpg",
+      originalIndex: 0,
+    },
+    {
+      src: "https://www.politikoffee.com/js/filemanager/source/download.jpg",
+      originalIndex: 2,
+    },
+    {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/MET_DP-1062-001.jpg/500px-MET_DP-1062-001.jpg",
+      originalIndex: 1,
+    },
   ],
 };
 
@@ -93,27 +126,11 @@ const highlightCardsData = {
         </>
       ),
     },
-    {
-      bgImg: "https://www.unesco.org/sites/default/files/national_museum.jpg",
-      text: (
-        <>
-          Learn Khmer Heritage at <br /> National Museum
-        </>
-      ),
-    },
-    {
-      bgImg: "https://www.unesco.org/sites/default/files/national_museum.jpg",
-      text: (
-        <>
-          Learn Khmer Heritage at <br /> National Museum
-        </>
-      ),
-    },
   ],
   Popular: [
     {
       bgImg:
-        "https://www.tourismcambodia.com/img/uploads/attraction/koh-rong.jpg",
+        "https://i0.wp.com/travel-lush.com/wp-content/uploads/2015/02/old-pier-with-boats.jpg",
       text: (
         <>
           Relax on the Beaches of <br /> Koh Rong Island
@@ -122,7 +139,7 @@ const highlightCardsData = {
     },
     {
       bgImg:
-        "https://www.tourismcambodia.com/img/uploads/attraction/royal-palace.jpg",
+        "https://lh3.googleusercontent.com/gps-cs-s/AC9h4noANjSpa7grvfklZ22g1Jc8hS-eG0svpPwXLjJoau5xLfMbfJ2qw_u4v7umCie-SeJrBDkIa3G4y3issFB-1xuulkRP2U3BNArYPpEqNVGjU5XVtDEwq-YrjP8vGuCGPkMM5qW_Y_zmsxM3=s1360-w1360-h1020-rw",
       text: (
         <>
           Explore the Royal Palace <br /> of Phnom Penh
@@ -131,7 +148,7 @@ const highlightCardsData = {
     },
     {
       bgImg:
-        "https://www.tourismcambodia.com/img/uploads/attraction/phnom-bakheng.jpg",
+        "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nomYpf-Q125vEyc8yQIJw4wQBm1P9ZtiNxq4Rl6756By5ClRc8FEP4ApjBNsVDk7f_QWI1FNTUVXvD_mtzY_Pwbmx0fYa2UpR_0Z0J1HbpmIXTa35S3eeGqMqTwBYaZkgfVo5gA=s1360-w1360-h1020-rw",
       text: (
         <>
           Catch Sunset Views at <br /> Phnom Bakheng
@@ -140,7 +157,7 @@ const highlightCardsData = {
     },
     {
       bgImg:
-        "https://www.tourismcambodia.com/img/uploads/attraction/sihanoukville.jpg",
+        "https://static-content.cihms.com/wp-content/uploads/2024/12/places-weve-been-sihanouk3.jpeg",
       text: (
         <>
           Visit Sihanoukville's <br /> Coastal Paradise
@@ -151,7 +168,7 @@ const highlightCardsData = {
   Recommended: [
     {
       bgImg:
-        "https://www.tourismcambodia.com/img/uploads/attraction/kampot-pepper.jpg",
+        "https://wnfdiary.com/wp-content/uploads/2021/05/Kampot-Pepper-7.jpg",
       text: (
         <>
           Taste World-Class Pepper <br /> in Kampot
@@ -160,7 +177,7 @@ const highlightCardsData = {
     },
     {
       bgImg:
-        "https://www.tourismcambodia.com/img/uploads/attraction/bokor-hill.jpg",
+        "https://pippalihotel.com/wp-content/uploads/2024/05/1.-Bokor-Mountain-Phnom-Bokor.jpeg",
       text: (
         <>
           Trek Through Misty Trails <br /> of Bokor Hill
@@ -168,8 +185,7 @@ const highlightCardsData = {
       ),
     },
     {
-      bgImg:
-        "https://www.tourismcambodia.com/img/uploads/attraction/kratie-dolphins.jpg",
+      bgImg: "https://angkorfocus.com/userfiles/Irrawady-Dolphin.jpg",
       text: (
         <>
           Spot Irrawaddy Dolphins <br /> in Kratie
@@ -178,7 +194,7 @@ const highlightCardsData = {
     },
     {
       bgImg:
-        "https://www.tourismcambodia.com/img/uploads/attraction/phnom-kulen.jpg",
+        "https://www.siemreap.net/wp-content/uploads/2017/12/phnom-kulen-waterfall.jpg",
       text: (
         <>
           Hike to Sacred Waters <br /> at Phnom Kulen
@@ -189,7 +205,7 @@ const highlightCardsData = {
   Festivals: [
     {
       bgImg:
-        "https://www.tourismcambodia.com/img/uploads/attraction/water-festival.jpg",
+        "https://kampatour.com/pic/blog/1f1403c5-a7eb-4f7a-a3e9-1cdc54f76f0a.jpg",
       text: (
         <>
           Join the Exciting <br /> Water Festival
@@ -198,7 +214,7 @@ const highlightCardsData = {
     },
     {
       bgImg:
-        "https://www.tourismcambodia.com/img/uploads/attraction/khmer-new-year.jpg",
+        "https://files.intocambodia.org/wp-content/uploads/2024/08/03152930/Khmer-New-Year-Celebration-7.jpg",
       text: (
         <>
           Celebrate Khmer <br /> New Year Traditions
@@ -206,8 +222,7 @@ const highlightCardsData = {
       ),
     },
     {
-      bgImg:
-        "https://www.tourismcambodia.com/img/uploads/attraction/pchum-ben.jpg",
+      bgImg: "https://kampatour.com/pic/blog/images/pchum%20ben%208.jpg",
       text: (
         <>
           Observe Ancestral Rites <br /> During Pchum Ben
@@ -216,10 +231,10 @@ const highlightCardsData = {
     },
     {
       bgImg:
-        "https://www.tourismcambodia.com/img/uploads/attraction/royal-ploughing.jpg",
+        "https://backend.threeland.com/storage/images/bloggallery/files/Royal-Ploughing-Ceremony.jpg",
       text: (
         <>
-          Witness Cambodia’s <br /> Royal Ploughing Day
+          Witness Cambodia's <br /> Royal Ploughing Day
         </>
       ),
     },
@@ -564,8 +579,6 @@ function Home() {
             </li>
           </div>
         </ul>
-
-        {/* Highlight Cards Section */}
         <div className="flex flex-wrap items-center content-center gap-[25px] w-[1440px] px-[5px] pl-[10px]">
           {/* Dynamically render HighlightCrad components based on activeCategory */}
           {highlightCardsData[activeCategory].map((card, index) => (

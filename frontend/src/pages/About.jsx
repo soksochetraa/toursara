@@ -217,7 +217,7 @@ function About() {
           </div>
         </div>
         <img
-          src="https://www.aseanbriefing.com/news/wp-content/uploads/2018/02/ASEAN-Briefing-Cambodias-Investment-Outlook-for-2018-002.jpg"
+          src="https://pa-11264.kxcdn.com/wp-content/uploads/2024/12/koh-ker-2.webp"
           alt=""
           className="justify-center items-end w-[600px] h-[460px] object-cover rounded-[20px]"
         />

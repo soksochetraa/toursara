@@ -51,7 +51,9 @@ function Explore() {
     <>
       <section
         className="absolute top-0 h-[590px] w-full flex flex-col justify-center items-center gap-[50px] px-[50px] py-2.5 bg-cover bg-no-repeat bg-center"
-        style={{ backgroundImage: `url(${HeroBg})` }}
+        style={{
+          backgroundImage: `url(https://i.pinimg.com/736x/d1/5d/ce/d15dce1a667efbfa2a9d6c2b6e2a446a.jpg)`,
+        }}
       >
         <div className="flex flex-col items-center justify-center gap-2.5">
           <h1 className="font-medium text-[70px] leading-[84px] text-center text-[#58A6A0]">
@@ -82,7 +84,7 @@ function Explore() {
             onClick={handleVideoClick}
           >
             <YouTubePlayer
-              videoSrc="https://www.youtube.com/embed/gIebg7rI-rM?si=lhTwFRLvAik0FsBj"
+              videoSrc="https://www.youtube.com/embed/l-27gvMOtB0?si=2J4TaBkatAMr0ypD"
               w="1200px"
               h="520px"
               autoplay={false}
@@ -269,14 +271,14 @@ function Explore() {
       </section>
 
       <section className="w-full flex flex-col justify-center items-center gap-[18px] p-[30px]">
-        <div className="flex items-center justify-center gap-2.5 self-stretch p-[30px]">
+        <div className="flex items-center justify-center gap-2.5 p-[30px]">
           <h1 className="w-[1440px] text-start font-bold text-[32px] text-[#222222]">
             Search to Explore.
           </h1>
         </div>
         <div
           id="search-section"
-          className="w-full flex justify-center items-start gap-[18px] p-[30px]"
+          className="w-full flex justify-center items-start gap-[18px]"
           style={{
             transform: "scale(0.85)",
             transformOrigin: "top center",
@@ -284,7 +286,7 @@ function Explore() {
             height: "117.65%",
           }}
         >
-          <div className=" flex flex-col gap-4 px-10 pb-10">
+          <div className=" flex flex-col gap-4 px-10">
             <div className="w-[870px] h-[48px] flex items-center gap-4 self-stretch bg-white pl-6 pr-1 py-1 rounded-full border border-solid border-gray-200">
               <input
                 className="w-full outline-none text-base text-[14px]"

@@ -9,8 +9,9 @@ import Contact from "./pages/Contact";
 import Explore from "./pages/Explore";
 import DestinationsDetail from "./pages/DestinationsDetail";
 import HotelDetail from "./pages/HotelDetail";
-import LoginForm from "./pages/LoginForm"; // Assuming you have this
-import SignupForm from "./pages/SingupForm"; // Import your new SignupForm component
+import LoginForm from "./pages/LoginForm";
+import SignupForm from "./pages/SingupForm";
+import Account from "./pages/Account";
 
 const router = createBrowserRouter([
   {
@@ -53,14 +54,18 @@ const router = createBrowserRouter([
         path: "hotel/detail",
         element: <HotelDetail />,
       },
+      {
+        path: "account",
+        element: <Account />,
+      },
     ],
   },
   {
-    path: "login", // Route for your Login Form
+    path: "login",
     element: <LoginForm />,
   },
   {
-    path: "signup", // NEW: Route for your Signup Form (Get Started Now page)
+    path: "signup",
     element: <SignupForm />,
   },
 ]);
