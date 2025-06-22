@@ -1,5 +1,5 @@
 import { useState } from "react";
-import soksochetra from "../public/images/aboutus/soksochetra.jpg";
+import soksochetra from "../../public/images/aboutus/soksochetra.jpg";
 
 export default function EditUser({ user, onUpdate }) {
   const [editUser, setEditUser] = useState({ ...user });
